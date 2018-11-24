@@ -48,8 +48,8 @@ self.__precacheManifest = [
     "url": "/fonts/fa-regular-400.bdadb6ce.woff2"
   },
   {
-    "revision": "48f54f63d7711d0912a9a10205538fc4",
-    "url": "/fonts/fa-solid-900.48f54f63.ttf"
+    "revision": "f29ad0031ad2c1c14b771ce504e2bfa7",
+    "url": "/fonts/fa-solid-900.f29ad003.eot"
   },
   {
     "revision": "b48c48ea8457846a5695b139c377d3d1",
@@ -60,8 +60,8 @@ self.__precacheManifest = [
     "url": "/img/fa-regular-400.0c419713.svg"
   },
   {
-    "revision": "f29ad0031ad2c1c14b771ce504e2bfa7",
-    "url": "/fonts/fa-solid-900.f29ad003.eot"
+    "revision": "48f54f63d7711d0912a9a10205538fc4",
+    "url": "/fonts/fa-solid-900.48f54f63.ttf"
   },
   {
     "revision": "0b5e3a5451fc62d9023ccafc85bc89db",
