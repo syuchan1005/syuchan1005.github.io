@@ -9,6 +9,10 @@
         <v-icon dark left>fab fa-twitter</v-icon>
         Twitter
       </v-btn>
+      <v-btn color="#55C500" href="https://qiita.com/syu_chan_1005">
+        <v-icon dark left>fas fa-search</v-icon>
+        Qiita
+      </v-btn>
     </v-toolbar>
 
     <v-content>
