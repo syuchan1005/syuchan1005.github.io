@@ -9,11 +9,9 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
-/*
 if (CSS) {
   CSS.paintWorklet.addModule('/painters/BackgroundPainter.js');
 }
-*/
 
 Vue.config.productionTip = false;
 

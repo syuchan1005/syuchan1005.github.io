@@ -1,8 +1,8 @@
 <template>
   <div class="home" :class="[$vuetify.breakpoint.name]">
     <div class="avatar-container">
-      <v-img src="https://github.com/syuchan1005.png?size=8" aspect-ratio="1" :max-width="avatarSize"
-             :style="{ imageRendering: 'pixelated' }"/>
+      <v-img src="https://github.com/syuchan1005.png?size=8" aspect-ratio="1"
+             :max-width="avatarSize" :style="{ imageRendering: 'pixelated' }"/>
     </div>
     <div class="information">
       <div class="display-1 font-weight-black">syuchan1005</div>
