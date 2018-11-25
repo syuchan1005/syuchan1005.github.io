@@ -32,6 +32,12 @@ export default {
           icon: 'home',
           color: 'blue',
         },
+        {
+          path: '/productions',
+          text: 'Productions',
+          icon: 'dns',
+          color: 'orange',
+        },
       ],
     };
   },

@@ -73,7 +73,7 @@ export default {
   computed: {
     avatarSize() {
       if (this.$vuetify.breakpoint.xsOnly) {
-        return this.$vuetify.breakpoint.width * 0.8;
+        return this.$vuetify.breakpoint.width * 0.6;
       }
       return this.$vuetify.breakpoint.width / 3;
     },
@@ -103,6 +103,9 @@ export default {
 
     .information {
       padding: 10px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
     }
   }
 </style>
