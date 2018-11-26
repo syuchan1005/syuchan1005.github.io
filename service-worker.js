@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.5729e0a254073da1de32a08ee603a329.js"
+  "/precache-manifest.fa6409a842b432f34e15be7c72859445.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "syuchan1005.github.io"});
