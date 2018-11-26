@@ -9,7 +9,7 @@ import router from './router';
 import store from './store';
 import './registerServiceWorker';
 
-if (CSS) {
+if (CSS && CSS.paintWorklet && CSS.paintWorklet.addModule) {
   CSS.paintWorklet.addModule('/painters/BackgroundPainter.js');
 }
 
