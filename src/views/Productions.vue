@@ -46,6 +46,13 @@ export default {
           title: 'School Festival 2019',
           body: '2019年 学園祭用Webアプリ\nWebから商品の追加、統計などの閲覧、LINEBotからも操作できる',
         },
+        {
+          small: true,
+          color: 'orange lighten-1',
+          link: 'https://github.com/syuchan1005/GitPrefix',
+          title: 'GitPrefix',
+          body: 'IntelliJ IDEA用プラグイン\nVSCのコミット画面などから絵文字やテキストを先頭に挿入できる\n',
+        },
       ],
     };
   },
