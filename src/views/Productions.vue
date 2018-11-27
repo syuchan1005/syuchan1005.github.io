@@ -17,7 +17,8 @@
               {{ p.title }}
             </h2>
             <v-spacer/>
-            <v-btn v-if="p.link" icon dark :href="p.link" target="_blank" style="margin:0">
+            <v-btn v-if="p.link" icon dark :href="p.link" :aria-label="p.title"
+                   target="_blank" rel="noopener" style="margin:0">
               <v-icon>open_in_new</v-icon>
             </v-btn>
           </v-card-title>

@@ -24,7 +24,7 @@
           </v-list-tile-content>
 
           <v-list-tile-action v-show="contact.openIcon || contact.openLink">
-            <v-btn icon :href="contact.openLink"
+            <v-btn icon :href="contact.openLink" rel="noopener" :aria-label="contact.title"
                    :target="contact.openTarget === null ? null : contact.openTarget || '_blank'">
               <v-icon>{{ contact.openIcon || 'arrow_forward' }}</v-icon>
             </v-btn>
