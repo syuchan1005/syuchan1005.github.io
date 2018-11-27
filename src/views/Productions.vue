@@ -49,7 +49,7 @@ export default {
         },
         {
           small: true,
-          color: 'blue lighten-1',
+          color: 'green',
           link: 'https://github.com/syuchan1005/SchoolFestival2019',
           title: 'School Festival 2019',
           body: '2019年 学園祭用Webアプリ\nWebから商品の追加、統計などの閲覧、LINEBotからも操作できる',
@@ -60,6 +60,32 @@ export default {
           link: 'https://github.com/syuchan1005/GitPrefix',
           title: 'GitPrefix',
           body: 'IntelliJ IDEA用プラグイン\nVSCのコミット画面などから絵文字やテキストを先頭に挿入できる\n',
+        },
+        {
+          small: true,
+          color: 'blue',
+          link: 'https://github.com/syuchan1005/OSX-KVM',
+          title: 'OSX-KVM',
+          body: 'DockerでmacOSを動かそうというもの\n内部でqemuを起動し動かしていて、VNC, SSHができる',
+        },
+        {
+          small: true,
+          color: 'purple lighten-1',
+          link: 'https://github.com/syuchan1005/KataKataTaaaaaaan',
+          title: 'KataKataTaaaaaaan',
+          body: 'IntelliJ IDEA用プラグイン\nエディタ内で文字を打つと面白いことが起きる',
+        },
+        {
+          subheader: true,
+          hideDot: true,
+          body: '2017',
+        },
+        {
+          small: true,
+          color: 'yellow darken-4',
+          link: 'https://github.com/syuchan1005/NPMScriptRunner',
+          title: 'NPMScriptRunner',
+          body: 'IntelliJ IDEA用プラグイン\nNodejsのpackage.jsonのscriptsの横に実行ボタンを追加する\n現在では公式プラグインに統合されている',
         },
       ],
     };
