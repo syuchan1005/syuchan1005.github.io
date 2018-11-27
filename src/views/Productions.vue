@@ -42,6 +42,13 @@ export default {
         },
         {
           small: true,
+          color: 'green lighten-1',
+          link: 'https://github.com/syuchan1005/syuchan1005.github.io',
+          title: 'syuchan1005 Portfolio',
+          body: 'このサイト',
+        },
+        {
+          small: true,
           color: 'blue lighten-1',
           link: 'https://github.com/syuchan1005/SchoolFestival2019',
           title: 'School Festival 2019',
