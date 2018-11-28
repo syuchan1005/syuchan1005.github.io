@@ -12,8 +12,8 @@ self.__precacheManifest = [
     "url": "/icons/120.png"
   },
   {
-    "revision": "4cbac2a991ea88abfec5",
-    "url": "/css/chunk-vendors.8233f829.css"
+    "revision": "8f575a36e1a90dbec3aa",
+    "url": "/css/chunk-vendors.4a52cc4b.css"
   },
   {
     "revision": "bdadb6ce95c5a2e7b673940721450d3c",
@@ -36,12 +36,12 @@ self.__precacheManifest = [
     "url": "/fonts/fa-brands-400.659c4d58.woff2"
   },
   {
-    "revision": "8b7a9afd7b95f62e6ee8a72930bfb9ed",
-    "url": "/fonts/fa-brands-400.8b7a9afd.woff"
-  },
-  {
     "revision": "fb493903265cad425ccdf8e04fc2de61",
     "url": "/fonts/fa-solid-900.fb493903.woff2"
+  },
+  {
+    "revision": "8b7a9afd7b95f62e6ee8a72930bfb9ed",
+    "url": "/fonts/fa-brands-400.8b7a9afd.woff"
   },
   {
     "revision": "bcb927a742a8370b76642fd1a9a749c0",
@@ -56,12 +56,12 @@ self.__precacheManifest = [
     "url": "/fonts/fa-brands-400.b69de69a.ttf"
   },
   {
-    "revision": "f29ad0031ad2c1c14b771ce504e2bfa7",
-    "url": "/fonts/fa-solid-900.f29ad003.eot"
-  },
-  {
     "revision": "48f54f63d7711d0912a9a10205538fc4",
     "url": "/fonts/fa-solid-900.48f54f63.ttf"
+  },
+  {
+    "revision": "f29ad0031ad2c1c14b771ce504e2bfa7",
+    "url": "/fonts/fa-solid-900.f29ad003.eot"
   },
   {
     "revision": "0c41971339b9fc5b1cefb0abad1e2e69",
@@ -76,7 +76,7 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.4478b4d7.svg"
   },
   {
-    "revision": "9ea19f4a9946e776856d6bef7571e988",
+    "revision": "633450fdf446024203f96270fe2aceda",
     "url": "/index.html"
   },
   {
@@ -84,36 +84,48 @@ self.__precacheManifest = [
     "url": "/icons/128.png"
   },
   {
-    "revision": "614fe4ff71c32cb001a7",
-    "url": "/js/app.e26f6f52.js"
+    "revision": "a8b2b1fb90db009b5171",
+    "url": "/js/app.055f0a50.js"
   },
   {
-    "revision": "4cbac2a991ea88abfec5",
-    "url": "/js/chunk-vendors.9552f8e3.js"
-  },
-  {
-    "revision": "faab6552badd400b92a576a1ef5ee6cd",
-    "url": "/icons/16.png"
+    "revision": "8f575a36e1a90dbec3aa",
+    "url": "/js/chunk-vendors.ee494225.js"
   },
   {
     "revision": "5088662e6dec28f598f35bbcf4fd55ea",
     "url": "/icons/144.png"
   },
   {
+    "revision": "cd844cbff4dbda31332e471b7a335fa4",
+    "url": "/icons/180.png"
+  },
+  {
     "revision": "84b2559f58f8e6888cca4f0971738311",
     "url": "/icons/152.png"
   },
   {
-    "revision": "cd844cbff4dbda31332e471b7a335fa4",
-    "url": "/icons/180.png"
+    "revision": "faab6552badd400b92a576a1ef5ee6cd",
+    "url": "/icons/16.png"
+  },
+  {
+    "revision": "73b74cda34eafa576f84d9613e4dac0b",
+    "url": "/icons/195.png"
   },
   {
     "revision": "8af2bb086e10f88981f48c2b3dcc248e",
     "url": "/icons/192.png"
   },
   {
-    "revision": "73b74cda34eafa576f84d9613e4dac0b",
-    "url": "/icons/195.png"
+    "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
+    "url": "/icons/196.png"
+  },
+  {
+    "revision": "23b5b2a332d5cf79046c22f31317999f",
+    "url": "/icons/228.png"
+  },
+  {
+    "revision": "cfae9ead17319d7e6276546db06ee821",
+    "url": "/icons/24.png"
   },
   {
     "revision": "52bfab1c3d8c69ed65a431d9363bac00",
@@ -124,32 +136,24 @@ self.__precacheManifest = [
     "url": "/icons/32.png"
   },
   {
-    "revision": "34d381607f838ea06260801c0cc282c2",
-    "url": "/icons/48.png"
-  },
-  {
-    "revision": "cfae9ead17319d7e6276546db06ee821",
-    "url": "/icons/24.png"
+    "revision": "9eb0e3031b79635d1f445d7e7568204b",
+    "url": "/icons/57.png"
   },
   {
     "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
     "url": "/icons/512.png"
   },
   {
-    "revision": "9eb0e3031b79635d1f445d7e7568204b",
-    "url": "/icons/57.png"
-  },
-  {
-    "revision": "e456f6f67a10b7bba868cb73a19a187f",
-    "url": "/icons/76.png"
+    "revision": "34d381607f838ea06260801c0cc282c2",
+    "url": "/icons/48.png"
   },
   {
     "revision": "65b5e8da454ffb761087b3387d448499",
     "url": "/icons/64.png"
   },
   {
-    "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
-    "url": "/icons/196.png"
+    "revision": "e456f6f67a10b7bba868cb73a19a187f",
+    "url": "/icons/76.png"
   },
   {
     "revision": "2233a5f5e1dc2cd3cb62a739d3ff321e",
@@ -164,11 +168,7 @@ self.__precacheManifest = [
     "url": "/robots.txt"
   },
   {
-    "revision": "23b5b2a332d5cf79046c22f31317999f",
-    "url": "/icons/228.png"
-  },
-  {
-    "revision": "614fe4ff71c32cb001a7",
-    "url": "/css/app.262f0a55.css"
+    "revision": "a8b2b1fb90db009b5171",
+    "url": "/css/app.a2df203d.css"
   }
 ];
