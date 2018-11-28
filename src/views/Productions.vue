@@ -1,28 +1,46 @@
 <template>
   <div class="productions">
     <v-timeline :dense="$vuetify.breakpoint.xsOnly" :style="{ height: '100%' }">
-      <v-timeline-item v-for="(p, i) in computedProductions" :key="i"
-                       :color="p.color" :left="p.left" :right="!p.left"
+      <v-timeline-item v-for="(p, i) in productions" :key="i"
+                       :color="p.color" :left="productionsLeft[i]" :right="!productionsLeft[i]"
                        :small="p.small" :icon="p.dotIcon" :hide-dot="p.hideDot">
-        <div v-if="p.subheader" :style="{ float: p.left ? 'right' : undefined }">
+        <div v-if="p.subheader" :style="{ float: productionsLeft[i] ? 'right' : undefined }">
           <span class="headline font-weight-bold">
           {{ p.body }}
         </span>
         </div>
         <v-card v-else>
           <v-card-title :class="[p.color, 'justify-end']"
-                        :style="{ 'flex-flow': p.left ? 'row-reverse' : 'row' }">
-            <v-icon dark size="42" :class="{'mr-3': !p.left}">{{ p.titleIcon }}</v-icon>
-            <h2 class="display-1 white--text font-weight-light" :class="{'mr-3': p.left}">
+                        :style="{ 'flex-flow': productionsLeft[i] ? 'row-reverse' : 'row' }">
+            <v-icon dark size="42" :class="{'mr-3': !productionsLeft[i]}">{{ p.titleIcon }}</v-icon>
+            <h2 class="display-1 white--text font-weight-light"
+                :class="{'mr-3': productionsLeft[i]}">
               {{ p.title }}
             </h2>
-            <v-spacer/>
-            <v-btn v-if="p.link" icon dark :href="p.link" :aria-label="p.title"
-                   target="_blank" rel="noopener" style="margin:0">
-              <v-icon>open_in_new</v-icon>
-            </v-btn>
           </v-card-title>
           <v-container style="white-space: pre-wrap">{{ p.body }}</v-container>
+          <v-card-actions>
+            <v-btn v-if="p.link" outline :href="p.link" :aria-label="p.title"
+                   target="_blank" rel="noopener" style="margin:0" :color="p.color">
+              GO PAGE
+            </v-btn>
+            <v-spacer></v-spacer>
+            <v-btn flat @click="$set(p, 'show', !p.show)" v-show="p.more">
+              more
+              <v-icon>{{ p.show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+            </v-btn>
+          </v-card-actions>
+
+          <v-slide-y-transition>
+            <v-list v-show="p.show">
+              <v-list-tile v-for="m in p.more" :key="`${m[0]} ${m[1]}`">
+                <v-list-tile-content>
+                  <v-list-tile-sub-title>{{ m[0] }}</v-list-tile-sub-title>
+                  <v-list-tile-title>{{ m.slice(1).join(', ') }}</v-list-tile-title>
+                </v-list-tile-content>
+              </v-list-tile>
+            </v-list>
+          </v-slide-y-transition>
         </v-card>
       </v-timeline-item>
     </v-timeline>
@@ -46,6 +64,9 @@ export default {
           link: 'https://github.com/syuchan1005/syuchan1005.github.io',
           title: 'syuchan1005 Portfolio',
           body: 'このサイト',
+          more: [
+            ['フロントエンド', 'Vue.js', 'Vuetify'],
+          ],
         },
         {
           small: true,
@@ -53,6 +74,11 @@ export default {
           link: 'https://github.com/syuchan1005/SchoolFestival2019',
           title: 'School Festival 2019',
           body: '2019年 学園祭用Webアプリ\nWebから商品の追加、統計などの閲覧、LINEBotからも操作できる',
+          more: [
+            ['フロントエンド', 'Vue.js', 'Vuetify'],
+            ['バックエンド', 'Koa.js', 'GraphQL'],
+            ['他', 'SQLite'],
+          ],
         },
         {
           small: true,
@@ -91,19 +117,16 @@ export default {
     };
   },
   computed: {
-    computedProductions() {
+    productionsLeft() {
       if (this.$vuetify.breakpoint.xsOnly) {
-        return this.productions.map(v => (v.subheader ? v : {
-          ...v,
-          left: false,
-        }));
+        return this.productions.map(() => false);
       }
       return this.productions.map((v, i, a) => {
         if (v.left === undefined) {
           // eslint-disable-next-line no-param-reassign
           v.left = i > 0 ? !a[i - 1].left : true;
         }
-        return v;
+        return v.left;
       });
     },
   },
