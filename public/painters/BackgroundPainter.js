@@ -8,9 +8,9 @@ class BackgroundPainter {
     this.context = context;
     this.drawBG(geometry, properties);
     const colors = properties.get('--colors').toString().split(/[ \n]/).filter(str => str.length !== 0);
-    context.shadowColor = 'rgba(0, 0, 0, 0.4)';
+    context.shadowColor = 'rgba(0, 0, 0, 0.5)';
     context.shadowBlur = 30;
-    for (let i = 0; i < geometry.width / 40; i += 1) {
+    for (let i = 0; i < geometry.width / 70; i += 1) {
       context.fillStyle = colors[Math.floor(Math.random() * colors.length)];
       this.drawDiamond(
         geometry.width * (Math.random() * 2 - 0.5),
