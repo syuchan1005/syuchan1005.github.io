@@ -9,7 +9,7 @@ module.exports = {
     iconPaths: {
       favicon32: 'icons/32.png',
       favicon16: 'icons/16.png',
-      appleTouchIcon: 'icons/apple.png',
+      appleTouchIcon: 'icons/152.png',
       maskIcon: 'safari-pinned-tab.svg',
       msTileImage: 'icons/144.png',
     },
