@@ -12,24 +12,55 @@
         就活中
       </div>
       <v-list two-line subheader class="elevation-1">
-        <v-subheader inset>Contacts</v-subheader>
-        <v-list-tile v-for="contact in contacts" :key="contact.title">
-          <v-list-tile-avatar>
-            <v-icon>{{ contact.avatarIcon }}</v-icon>
-          </v-list-tile-avatar>
+        <template v-for="item in items">
+          <v-list-tile :key="item.title" v-if="item.tile">
+            <v-list-tile-avatar>
+              <v-icon>{{ item.avatarIcon }}</v-icon>
+            </v-list-tile-avatar>
 
-          <v-list-tile-content>
-            <v-list-tile-title>{{ contact.title }}</v-list-tile-title>
-            <v-list-tile-sub-title>{{ contact.subTitle }}</v-list-tile-sub-title>
-          </v-list-tile-content>
+            <v-list-tile-content>
+              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              <v-list-tile-sub-title>{{ item.subTitle }}</v-list-tile-sub-title>
+            </v-list-tile-content>
 
-          <v-list-tile-action v-show="contact.openIcon || contact.openLink">
-            <v-btn icon :href="contact.openLink" rel="noopener" :aria-label="contact.title"
-                   :target="contact.openTarget === null ? null : contact.openTarget || '_blank'">
-              <v-icon>{{ contact.openIcon || 'arrow_forward' }}</v-icon>
-            </v-btn>
-          </v-list-tile-action>
-        </v-list-tile>
+            <v-list-tile-action v-show="item.openIcon || item.openLink">
+              <v-btn icon :href="item.openLink" rel="noopener" :aria-label="item.title"
+                     :target="item.openTarget === null ? null : item.openTarget || '_blank'">
+                <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
+              </v-btn>
+            </v-list-tile-action>
+          </v-list-tile>
+          <v-list-group v-model="item.active" no-action :key="item.title" v-else>
+            <v-list-tile slot="activator">
+              <v-list-tile-content>
+                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
+              </v-list-tile-content>
+            </v-list-tile>
+
+            <v-list-tile
+              v-for="subItem in item.items"
+              :key="subItem.title"
+              @click="() => {}"
+            >
+              <v-list-tile-avatar>
+                <v-icon>{{ subItem.avatarIcon }}</v-icon>
+              </v-list-tile-avatar>
+
+              <v-list-tile-content>
+                <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
+                <v-list-tile-sub-title>{{ subItem.subTitle }}</v-list-tile-sub-title>
+              </v-list-tile-content>
+
+              <v-list-tile-action v-show="subItem.openIcon || subItem.openLink">
+                <v-btn icon :href="subItem.openLink" rel="noopener" :aria-label="subItem.title"
+                       :target="subItem.openTarget === null
+                       ? null : subItem.openTarget || '_blank'">
+                  <v-icon>{{ subItem.openIcon || 'arrow_forward' }}</v-icon>
+                </v-btn>
+              </v-list-tile-action>
+            </v-list-tile>
+          </v-list-group>
+        </template>
       </v-list>
     </div>
   </div>
@@ -40,8 +71,9 @@ export default {
   name: 'Home',
   data() {
     return {
-      contacts: [
+      items: [
         {
+          tile: true,
           avatarIcon: 'mail',
           title: 'Email',
           subTitle: 'syuchan.dev@gmail.com',
@@ -50,22 +82,28 @@ export default {
           openTarget: null,
         },
         {
-          avatarIcon: 'fab fa-twitter',
-          title: 'Twitter',
-          subTitle: '@syu_chan_1005',
-          openLink: 'https://twitter.com/syu_chan_1005',
-        },
-        {
-          avatarIcon: 'fas fa-search',
-          title: 'Qiita',
-          subTitle: '@syu_chan_1005',
-          openLink: 'https://qiita.com/syu_chan_1005',
-        },
-        {
-          avatarIcon: 'fab fa-github',
-          title: 'Github',
-          subTitle: 'syu_chan_1005',
-          openLink: 'https://github.com/syuchan1005',
+          title: 'Links',
+          active: true,
+          items: [
+            {
+              avatarIcon: 'fab fa-twitter',
+              title: 'Twitter',
+              subTitle: '@syu_chan_1005',
+              openLink: 'https://twitter.com/syu_chan_1005',
+            },
+            {
+              avatarIcon: 'fas fa-search',
+              title: 'Qiita',
+              subTitle: '@syu_chan_1005',
+              openLink: 'https://qiita.com/syu_chan_1005',
+            },
+            {
+              avatarIcon: 'fab fa-github',
+              title: 'Github',
+              subTitle: 'syu_chan_1005',
+              openLink: 'https://github.com/syuchan1005',
+            },
+          ],
         },
       ],
     };
