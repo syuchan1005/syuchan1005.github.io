@@ -33,6 +33,12 @@ export default {
           color: 'blue',
         },
         {
+          path: '/details',
+          text: 'Details',
+          icon: 'details',
+          color: 'green darken-2',
+        },
+        {
           path: '/productions',
           text: 'Productions',
           icon: 'dns',
