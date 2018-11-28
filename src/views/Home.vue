@@ -1,65 +1,25 @@
 <template>
   <div class="home" :class="[$vuetify.breakpoint.name]">
-    <div class="avatar-container">
-      <img src="@/assets/icon.png" alt="icon"
-           :width="avatarSize" style="image-rendering: pixelated;"/>
+    <div style="text-align: center">
+      <img src="@/assets/icon.png" alt="icon" :width="avatarSize" class="avatar"/>
     </div>
     <div class="information">
       <div class="display-1 font-weight-black">syuchan1005</div>
-      <div class="subheading">2020卒 (予定)</div>
+      <div class="subheading">
+        1999/10/05 生
+        <span class="body-1">2020卒 (予定)</span>
+      </div>
       <div class="body-2" style="white-space: pre-wrap">
         やりたいことをやっている高専生
         就活中
       </div>
       <v-list two-line subheader class="elevation-1">
-        <template v-for="item in items">
-          <v-list-tile :key="item.title" v-if="item.tile">
-            <v-list-tile-avatar>
-              <v-icon>{{ item.avatarIcon }}</v-icon>
-            </v-list-tile-avatar>
-
-            <v-list-tile-content>
-              <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              <v-list-tile-sub-title>{{ item.subTitle }}</v-list-tile-sub-title>
-            </v-list-tile-content>
-
-            <v-list-tile-action v-show="item.openIcon || item.openLink">
-              <v-btn icon :href="item.openLink" rel="noopener" :aria-label="item.title"
-                     :target="item.openTarget === null ? null : item.openTarget || '_blank'">
-                <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
-              </v-btn>
-            </v-list-tile-action>
-          </v-list-tile>
-          <v-list-group v-model="item.active" no-action :key="item.title" v-else>
-            <v-list-tile slot="activator">
-              <v-list-tile-content>
-                <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-
-            <v-list-tile
-              v-for="subItem in item.items"
-              :key="subItem.title"
-              @click="() => {}"
-            >
-              <v-list-tile-avatar>
-                <v-icon>{{ subItem.avatarIcon }}</v-icon>
-              </v-list-tile-avatar>
-
-              <v-list-tile-content>
-                <v-list-tile-title>{{ subItem.title }}</v-list-tile-title>
-                <v-list-tile-sub-title>{{ subItem.subTitle }}</v-list-tile-sub-title>
-              </v-list-tile-content>
-
-              <v-list-tile-action v-show="subItem.openIcon || subItem.openLink">
-                <v-btn icon :href="subItem.openLink" rel="noopener" :aria-label="subItem.title"
-                       :target="subItem.openTarget === null
-                       ? null : subItem.openTarget || '_blank'">
-                  <v-icon>{{ subItem.openIcon || 'arrow_forward' }}</v-icon>
-                </v-btn>
-              </v-list-tile-action>
-            </v-list-tile>
-          </v-list-group>
+        <template v-for="(item, index) in items">
+          <details-list-tile :key="`${item.title} ${item.sideTitle} ${item.subTitle}`"
+                             :item="item" v-if="!item.items" />
+          <details-list-group :key="`${item.title} ${item.sideTitle} ${item.subTitle}`"
+                              :item="item" v-else />
+          <v-divider :key="index"/>
         </template>
       </v-list>
     </div>
@@ -67,13 +27,19 @@
 </template>
 
 <script>
+import DetailsListTile from '../components/DetailsListTile.vue';
+import DetailsListGroup from '../components/DetailsListGroup.vue';
+
 export default {
+  components: {
+    DetailsListTile,
+    DetailsListGroup,
+  },
   name: 'Home',
   data() {
     return {
       items: [
         {
-          tile: true,
           avatarIcon: 'mail',
           title: 'Email',
           subTitle: 'syuchan.dev@gmail.com',
@@ -105,21 +71,69 @@ export default {
             },
           ],
         },
+        {
+          title: 'License & Certificate',
+          items: [
+            {
+              avatarIcon: 'fas fa-id-card',
+              title: '基本情報技術者',
+              subTitle: '2018/11/21 取得',
+            },
+            {
+              avatarIcon: 'fas fa-car',
+              title: '普通運転免許',
+              subTitle: '2018/03/05 取得',
+            },
+          ],
+        },
+        {
+          title: 'Skills',
+          items: [
+            {
+              title: 'Languages',
+              items: [
+                { title: 'Javascript', rating: 4, avatarIcon: 'fab fa-js' },
+                {
+                  title: 'Javascript',
+                  sideTitle: 'Nodejs',
+                  rating: 4,
+                  avatarIcon: 'fab fa-node-js',
+                },
+                { title: 'TypeScript', rating: 3.5 },
+                { title: 'Java', rating: 4, avatarIcon: 'fab fa-java' },
+                { title: 'C/C++', rating: 2.5 },
+                { title: 'C#', rating: 3 },
+                { title: 'PHP', rating: 3, avatarIcon: 'fab fa-php' },
+                { title: 'HTML5+CSS3', sideTitle: '+ scss', rating: 4 },
+                { title: 'Go', rating: 3.5 },
+                { title: 'Swift', rating: 3.5 },
+                { title: 'Python3', rating: 3.5, avatarIcon: 'fab fa-python' },
+                { title: 'Kotlin', rating: 4 },
+              ],
+            },
+            {
+              title: 'Databases',
+              items: [
+                { title: 'MySQL', rating: 4 },
+                { title: 'SQLite', rating: 4 },
+              ],
+            },
+          ],
+        },
       ],
     };
   },
   computed: {
     avatarSize() {
-      if (this.$vuetify.breakpoint.xsOnly) {
-        return this.$vuetify.breakpoint.width * 0.6;
-      }
-      return this.$vuetify.breakpoint.width / 3;
+      let preWidth = this.$vuetify.breakpoint.width / 3;
+      if (this.$vuetify.breakpoint.xsOnly) preWidth *= 2;
+      return preWidth;
     },
   },
 };
 </script>
 
-<!--suppress CssInvalidFunction -->
+<!--suppress CssInvalidFunction, CssOverwrittenProperties -->
 <style lang="scss" scoped>
   .home {
     padding-top: 20px;
@@ -129,14 +143,25 @@ export default {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    .avatar-container {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
+    .avatar {
+      image-rendering: pixelated;
+      margin: 40px auto 0;
+      position: sticky;
+      top: calc(60px + 64px + constant(safe-area-inset-top));
+      top: calc(60px + 64px + env(safe-area-inset-top));
+    }
+
+    &.sm {
+      top: calc(60px + 56px + constant(safe-area-inset-top));
+      top: calc(60px + 56px + env(safe-area-inset-top));
     }
 
     &.xs {
       display: block;
+
+      .avatar {
+        margin-top: 0;
+      }
     }
 
     .information {
