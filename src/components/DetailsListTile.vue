@@ -14,6 +14,10 @@
                 :size="$vuetify.breakpoint.width < 750 ? 16 : 22" half-increments readonly />
     </v-list-tile-content>
 
+    <div class="subheading" v-if="item.rightText">
+      {{ item.rightText }}
+    </div>
+
     <div class="subheading" v-if="item.startDate">
       {{ Math.round((Date.now() - item.startDate.valueOf()) / 3153600000) / 10 }}年
     </div>

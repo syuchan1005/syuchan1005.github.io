@@ -77,6 +77,7 @@ export default {
             {
               avatarIcon: 'fas fa-id-card',
               title: '基本情報技術者',
+              sideTitle: 'FE',
               subTitle: '2018/11/21 取得',
             },
             {
@@ -87,18 +88,22 @@ export default {
           ],
         },
         {
+          title: 'Languages',
+          items: [
+            /* eslint-disable object-curly-newline */
+            { title: 'Japanese', sideTitle: '日本語', rating: 5 },
+            { title: 'English', sideTitle: '英語', rating: 3 },
+            { title: 'Chinese', sideTitle: '中国語', rating: 1.5 },
+            /* eslint-enable object-curly-newline */
+          ],
+        },
+        {
           title: 'Skills',
           items: [
             {
               title: 'Languages',
               items: [
                 { title: 'Javascript', rating: 4, avatarIcon: 'fab fa-js' },
-                {
-                  title: 'Javascript',
-                  sideTitle: 'Nodejs',
-                  rating: 4,
-                  avatarIcon: 'fab fa-node-js',
-                },
                 { title: 'TypeScript', rating: 3.5 },
                 { title: 'Java', rating: 4, avatarIcon: 'fab fa-java' },
                 { title: 'C/C++', rating: 2.5 },
@@ -116,6 +121,44 @@ export default {
               items: [
                 { title: 'MySQL', rating: 4 },
                 { title: 'SQLite', rating: 4 },
+              ],
+            },
+            {
+              title: 'Frameworks',
+              items: [
+                { title: 'iOS', rating: 3 },
+                { title: 'Android', rating: 3 },
+                { title: 'Spring', rating: 3 },
+                { title: 'Laravel', rating: 3 },
+                { title: 'Flask', rating: 3 },
+                { title: 'Gin', rating: 3 },
+                { title: 'Echo', rating: 3 },
+                { title: '.Net Framework', rating: 3 },
+                { title: 'jQuery', rating: 3 },
+                { title: 'Vue.js', rating: 3 },
+                { title: 'React', rating: 3 },
+                { title: 'Node', rating: 3 },
+                { title: 'Bootstrap', rating: 3 },
+                { title: 'Unity', rating: 3 },
+                { title: 'Unreal Engine', rating: 2.5 },
+              ],
+            },
+            {
+              title: 'Other',
+              items: [
+                { title: 'Ubuntu', rating: 3 },
+                { title: 'Debian', rating: 3 },
+                { title: 'macOS', rating: 3 },
+                { title: 'Windows', rating: 3 },
+                { title: 'Apache', rating: 3 },
+                { title: 'nginx', rating: 3 },
+                { title: 'Tomcat', rating: 3 },
+                { title: 'Redis', rating: 3 },
+                { title: 'memcached', rating: 3 },
+                { title: 'WordPress', rating: 2 },
+                { title: 'Vim', rating: 3 },
+                { title: 'Emacs', rating: 3 },
+                { title: 'IntelliJ IDEA', rating: 4 },
               ],
             },
           ],
