@@ -43,6 +43,7 @@ export default {
           avatarIcon: 'mail',
           title: 'Email',
           subTitle: 'syuchan.dev@gmail.com',
+          openTip: 'mailto',
           openIcon: 'send',
           openLink: 'mailto:syuchan.dev@gmail.com',
           openTarget: null,

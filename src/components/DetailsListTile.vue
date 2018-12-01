@@ -23,7 +23,14 @@
     </div>
 
     <v-list-tile-action v-show="item.openIcon || item.openLink">
-      <v-btn icon :href="item.openLink" rel="noopener" :aria-label="item.title"
+      <v-tooltip v-if="item.openTip" top>
+        <v-btn icon slot="activator" :href="item.openLink" rel="noopener" :aria-label="item.title"
+               :target="item.openTarget === null ? null : item.openTarget || '_blank'">
+          <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
+        </v-btn>
+        <span>{{ item.openTip }}</span>
+      </v-tooltip>
+      <v-btn icon v-else :href="item.openLink" rel="noopener" :aria-label="item.title"
              :target="item.openTarget === null ? null : item.openTarget || '_blank'">
         <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
       </v-btn>

@@ -1,6 +1,6 @@
 <template>
   <div class="productions">
-    <v-timeline :dense="$vuetify.breakpoint.xsOnly" :style="{ height: '100%' }">
+    <v-timeline :dense="timelineDense" :style="{ height: '100%' }">
       <v-timeline-item v-for="(p, i) in productions" :key="i"
                        :color="p.color" :left="productionsLeft[i]" :right="!productionsLeft[i]"
                        :small="p.small" :icon="p.dotIcon" :hide-dot="p.hideDot">
@@ -33,12 +33,19 @@
 
           <v-slide-y-transition>
             <v-list v-show="p.show">
-              <v-list-tile v-for="m in p.more" :key="`${m[0]} ${m[1]}`">
-                <v-list-tile-content>
-                  <v-list-tile-sub-title>{{ m[0] }}</v-list-tile-sub-title>
-                  <v-list-tile-title>{{ m.slice(1).join(', ') }}</v-list-tile-title>
-                </v-list-tile-content>
-              </v-list-tile>
+              <template v-for="m in p.more">
+                <v-list-tile v-if="Array.isArray(m)" :key="`${m[0]} ${m[1]}`">
+                  <v-list-tile-content>
+                    <v-list-tile-sub-title>{{ m[0] }}</v-list-tile-sub-title>
+                    <v-list-tile-title>{{ m.slice(1).join(', ') }}</v-list-tile-title>
+                  </v-list-tile-content>
+                </v-list-tile>
+                <v-list-tile v-else :key="m">
+                  <v-list-tile-content>
+                    {{ m }}
+                  </v-list-tile-content>
+                </v-list-tile>
+              </template>
             </v-list>
           </v-slide-y-transition>
         </v-card>
@@ -63,7 +70,7 @@ export default {
           color: 'green lighten-1',
           link: 'https://github.com/syuchan1005/syuchan1005.github.io',
           title: 'syuchan1005 Portfolio',
-          body: 'このサイト',
+          body: 'このサイト\nChromeなどのCSS Paint API対応ブラウザで開くと背景がうるさくなる仕様\n(DOMでも再現できるがすごく重たくなる)',
           more: [
             ['フロントエンド', 'Vue.js', 'Vuetify'],
           ],
@@ -75,6 +82,7 @@ export default {
           title: 'School Festival 2019',
           body: '2019年 学園祭用Webアプリ\nWebから商品の追加、統計などの閲覧、LINEBotからも操作できる',
           more: [
+            '1500人規模の利用を想定',
             ['フロントエンド', 'Vue.js', 'Vuetify'],
             ['バックエンド', 'Koa.js', 'GraphQL'],
             ['他', 'SQLite'],
@@ -92,7 +100,7 @@ export default {
           color: 'blue',
           link: 'https://github.com/syuchan1005/OSX-KVM',
           title: 'OSX-KVM',
-          body: 'DockerでmacOSを動かそうというもの\n内部でqemuを起動し動かしていて、VNC, SSHができる',
+          body: 'DockerでmacOSを動かそうというもの\n内部でqemuを起動していて、VNC, SSHができる',
         },
         {
           small: true,
@@ -117,10 +125,11 @@ export default {
     };
   },
   computed: {
+    timelineDense() {
+      return this.$vuetify.breakpoint.width < 770;
+    },
     productionsLeft() {
-      if (this.$vuetify.breakpoint.xsOnly) {
-        return this.productions.map(() => false);
-      }
+      if (this.timelineDense) return this.productions.map(() => false);
       return this.productions.map((v, i, a) => {
         if (v.left === undefined) {
           // eslint-disable-next-line no-param-reassign
