@@ -17,6 +17,13 @@
         <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
     </v-bottom-nav>
+
+    <div class="alert">
+      <v-alert :value="showReloadAlert" type="warning" dismissible>
+        <div>新しいアップデートがあります! リロードして更新して下さい.</div>
+        <v-btn color="primary" round block @click="locationReload(true)">Reload</v-btn>
+      </v-alert>
+    </div>
   </v-app>
 </template>
 
@@ -39,6 +46,7 @@ export default {
           color: 'orange',
         },
       ],
+      showReloadAlert: false,
     };
   },
   computed: {
@@ -50,6 +58,16 @@ export default {
         this.$router.push(val);
       },
     },
+  },
+  mounted() {
+    if (window.isUpdateAvailable) { // PWA用の更新処理
+      window.isUpdateAvailable.then((available) => {
+        this.showReloadAlert = available;
+      });
+    }
+  },
+  methods: {
+    locationReload: val => window.location.reload(val),
   },
 };
 </script>
@@ -90,5 +108,16 @@ export default {
     height: auto !important;
     padding-bottom: constant(safe-area-inset-bottom) !important;
     padding-bottom: env(safe-area-inset-bottom) !important;
+  }
+
+  .alert {
+    z-index: 10;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    .v-alert:last-child {
+      margin-bottom: 0;
+    }
   }
 </style>
