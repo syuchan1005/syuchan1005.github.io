@@ -6,12 +6,12 @@
     <div class="information">
       <div class="display-1 font-weight-black">syuchan1005</div>
       <div class="subheading">
-        1999/10/05 生
+        1999/10/05 生まれ
         <span class="body-1">2020卒 (予定)</span>
       </div>
       <div class="body-2" style="white-space: pre-wrap">
         やりたいことをやっている高専生
-        就活中
+        就活中 (内定もらった)
       </div>
       <v-list two-line subheader class="elevation-1">
         <template v-for="(item, index) in items">

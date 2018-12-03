@@ -1,5 +1,5 @@
 <template>
-  <div class="productions">
+  <div class="productions" :style="{ '--seed': seed }">
     <v-timeline :dense="timelineDense" :style="{ height: '100%' }">
       <v-timeline-item v-for="(p, i) in productions" :key="i"
                        :color="p.color" :left="productionsLeft[i]" :right="!productionsLeft[i]"
@@ -22,7 +22,8 @@
           <v-card-actions>
             <v-btn v-if="p.link" outline :href="p.link" :aria-label="p.title"
                    target="_blank" rel="noopener" style="margin:0" :color="p.color">
-              GO PAGE
+              <v-icon left>arrow_forward</v-icon>
+              Repository
             </v-btn>
             <v-spacer></v-spacer>
             <v-btn flat @click="$set(p, 'show', !p.show)" v-show="p.more">
@@ -59,6 +60,7 @@ export default {
   name: 'Productions',
   data() {
     return {
+      seed: Date.now(),
       productions: [
         {
           subheader: true,
