@@ -1,6 +1,4 @@
 /* eslint-disable no-param-reassign, class-methods-use-this, no-bitwise */
-const seed = Date.now();
-
 class BackgroundPainter {
   constructor() {
     /* MersenneTwister */
@@ -15,7 +13,7 @@ class BackgroundPainter {
   }
 
   initSeed() {
-    this.mt[0] = seed >>> 0;
+    this.mt[0] = (this.seed || Date.now()) >>> 0;
     for (this.mti = 1; this.mti < this.N; this.mti += 1) {
       const s = this.mt[this.mti - 1] ^ (this.mt[this.mti - 1] >>> 30);
       this.mt[this.mti] = (((((s & 0xffff0000) >>> 16) * 1812433253) << 16)
@@ -56,7 +54,7 @@ class BackgroundPainter {
   }
 
   static get inputProperties() {
-    return ['--background-color', '--colors'];
+    return ['--background-color', '--colors', '--seed'];
   }
 
   paint(context, geometry, properties) {
@@ -65,7 +63,11 @@ class BackgroundPainter {
     const colors = properties.get('--colors').toString().split(/[ \n]/).filter(str => str.length !== 0);
     context.shadowColor = 'rgba(0, 0, 0, 0.5)';
     context.shadowBlur = 30;
+
+    const seedProp = parseInt(properties.get('--seed').toString(), 10);
+    if (Number.isInteger(seedProp)) this.seed = seedProp;
     this.initSeed();
+
     for (let i = 0; i < geometry.width / 70; i += 1) {
       context.fillStyle = colors[Math.floor(this.next() * colors.length)];
       this.drawDiamond(
