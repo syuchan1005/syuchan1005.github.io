@@ -1,19 +1,20 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
-import Productions from './views/Productions.vue';
+
+const AsyncProductions = () => import('./views/Productions.vue');
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: Home.name,
+      name: 'home',
       component: Home,
     },
     {
       path: '/productions',
-      name: Productions.name,
-      component: Productions,
+      name: 'productions',
+      component: AsyncProductions,
     },
   ],
   scrollBehavior(to, from, savedPosition) {
