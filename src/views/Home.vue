@@ -70,6 +70,12 @@ export default {
               subTitle: 'syu_chan_1005',
               openLink: 'https://github.com/syuchan1005',
             },
+            {
+              avatarIcon: 'fas fa-pen-nib',
+              title: 'はてなブログ',
+              subTitle: 'syuchan1005',
+              openLink: 'https://syuchan1005.hatenablog.com/',
+            },
           ],
         },
         {
