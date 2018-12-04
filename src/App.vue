@@ -2,7 +2,7 @@
   <v-app>
     <v-toolbar app class="app-header" color="green lighten-1" fixed dark>
       <v-toolbar-title class="headline text-uppercase">
-        syuchan1005's Portfolio
+        syuchan1005's Portfolio (Alpha)
       </v-toolbar-title>
     </v-toolbar>
 
