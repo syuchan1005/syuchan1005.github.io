@@ -1,5 +1,6 @@
 module.exports = {
   outputDir: 'docs',
+  productionSourceMap: false,
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
@@ -13,6 +14,7 @@ module.exports = {
       maskIcon: 'safari-pinned-tab.svg',
       msTileImage: 'icons/144.png',
     },
+    appleMobileWebAppCapable: 'yes',
     appleMobileWebAppStatusBarStyle: 'black-translucent',
     name: 'syuchan1005 Portfolio',
     themeColor: '#66bb6a',
