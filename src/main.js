@@ -13,6 +13,8 @@ if (CSS && CSS.paintWorklet && CSS.paintWorklet.addModule) {
   CSS.paintWorklet.addModule('/painters/BackgroundPainter.js');
 }
 
+Vue.config.devtools = process.env.NODE_ENV !== 'production';
+Vue.config.performance = process.env.NODE_ENV !== 'production';
 Vue.config.productionTip = false;
 
 new Vue({

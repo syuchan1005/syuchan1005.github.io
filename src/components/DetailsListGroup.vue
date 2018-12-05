@@ -8,9 +8,9 @@
     </v-list-tile>
 
     <template v-for="subItem in item.items">
-      <details-list-tile :item="subItem" v-if="!subItem.items"
+      <details-list-tile :item="subItem" v-if="item.active && !subItem.items"
                          :key="`${subItem.title} ${subItem.sideTitle} ${subItem.subTitle}`" />
-      <details-list-group :item="subItem" sub-group v-else
+      <details-list-group :item="subItem" sub-group v-else-if="item.active"
                           :key="`${subItem.title} ${subItem.sideTitle} ${subItem.subTitle}`" />
     </template>
   </v-list-group>

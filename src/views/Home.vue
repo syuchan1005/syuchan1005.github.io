@@ -11,7 +11,7 @@
       </div>
       <div class="body-2" style="white-space: pre-wrap">
         やりたいことをやっている高専生
-        就活中 (内定もらった)
+        就活中 (内定もらったけどまだ募集中)
       </div>
       <v-list two-line subheader class="elevation-1">
         <template v-for="(item, index) in items">
