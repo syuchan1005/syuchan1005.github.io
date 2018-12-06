@@ -1,5 +1,5 @@
 <template>
-  <v-list-tile :key="item.title">
+  <v-list-tile>
     <v-list-tile-avatar>
       <v-icon>{{ item.avatarIcon }}</v-icon>
     </v-list-tile-avatar>

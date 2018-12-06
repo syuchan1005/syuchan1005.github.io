@@ -1,7 +1,7 @@
 <template>
   <div class="home" :class="[$vuetify.breakpoint.name]">
     <div style="text-align: center">
-      <img src="@/assets/icon.png" alt="icon" :width="avatarSize" class="avatar"/>
+      <img src="../assets/icon.png" alt="icon" :width="avatarSize" class="avatar"/>
     </div>
     <div class="information">
       <div class="display-1 font-weight-black">syuchan1005</div>
@@ -13,7 +13,7 @@
         やりたいことをやっている高専生
         就活中 (内定もらったけどまだ募集中)
       </div>
-      <v-list two-line subheader class="elevation-1">
+      <v-list two-line subheader class="elevation-1" v-if="appMounted">
         <template v-for="(item, index) in items">
           <details-list-tile :key="`${item.title} ${item.sideTitle} ${item.subTitle}`"
                              :item="item" v-if="!item.items" />
@@ -27,6 +27,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 import DetailsListTile from '../components/DetailsListTile.vue';
 import DetailsListGroup from '../components/DetailsListGroup.vue';
 
@@ -75,6 +77,12 @@ export default {
               title: 'はてなブログ',
               subTitle: 'syuchan1005',
               openLink: 'https://syuchan1005.hatenablog.com/',
+            },
+            {
+              avatarIcon: 'fab fa-amazon',
+              title: 'Amazon',
+              subTitle: 'ほしいものリスト',
+              openLink: 'http://amzn.asia/j7JpIsb',
             },
           ],
         },
@@ -174,10 +182,11 @@ export default {
     };
   },
   computed: {
+    ...mapState(['appMounted']),
     avatarSize() {
       let preWidth = this.$vuetify.breakpoint.width / 3;
       if (this.$vuetify.breakpoint.xsOnly) preWidth *= 2;
-      return preWidth;
+      return Math.min(preWidth, this.$vuetify.breakpoint.height / 2);
     },
   },
 };
