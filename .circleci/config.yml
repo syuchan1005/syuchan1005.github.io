@@ -19,7 +19,7 @@ jobs:
     docker:
       - image: circleci/node:10.14
     environment:
-      GIT_COMMIT_DESC: git log --format=%B -n 1 $CIRCLE_SHA1
+      GIT_COMMIT_DESC: $(git log --format=%B -n 1 $CIRCLE_SHA1)
     working_directory: ~/repo
     steps:
       - checkout
@@ -29,8 +29,8 @@ jobs:
       - run: npm install
       - run: git config user.name $GITHUB_NAME
       - run: git config user.email $GITHUB_EMAIL
-      - run: npm run build
-      - run: npm run deploy:gh-pages -- -m '$GIT_COMMIT_DESC [skip ci]'
+      - run: rm -rf docs && npm run build
+      - run: cd docs && git add . && git commit -m "$GIT_COMMIT_DESC [skip ci]" && git push origin master
 workflows:
   version: 2
   build-deploy:

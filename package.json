@@ -5,8 +5,7 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "node mv docs/.git docs.git && vue-cli-service build && node mv docs.git docs/.git",
-    "lint": "vue-cli-service lint",
-    "deploy:gh-pages": "gh-pages -d docs -t"
+    "lint": "vue-cli-service lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.5.0",
@@ -28,7 +27,6 @@
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
     "fs-extra": "^7.0.1",
-    "gh-pages": "^2.0.1",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "stylus": "^0.54.5",
