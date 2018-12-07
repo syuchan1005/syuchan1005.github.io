@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "node mv docs/.git docs.git && vue-cli-service build && node mv docs.git docs/.git",
+    "build": "node mv docs/.git docs.git && vue-cli-service build --report && node mv docs.git docs/.git",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
@@ -12,7 +12,6 @@
     "material-design-icons-iconfont": "^4.0.3",
     "register-service-worker": "^1.0.0",
     "vue": "^2.5.17",
-    "vue-analytics": "^5.16.1",
     "vue-router": "^3.0.1",
     "vuetify": "^1.3.12",
     "vuex": "^3.0.1"
@@ -33,8 +32,7 @@
     "stylus-loader": "^3.0.1",
     "vue-cli-plugin-vuetify": "^0.4.6",
     "vue-template-compiler": "^2.5.17",
-    "vuetify-loader": "^1.0.8",
-    "webpack-bundle-analyzer": "^3.0.3"
+    "vuetify-loader": "^1.0.8"
   },
   "babel": {
     "presets": [

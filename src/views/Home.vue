@@ -29,13 +29,10 @@
 <script>
 import { mapState } from 'vuex';
 
-import DetailsListTile from '../components/DetailsListTile.vue';
-import DetailsListGroup from '../components/DetailsListGroup.vue';
-
 export default {
   components: {
-    DetailsListTile,
-    DetailsListGroup,
+    DetailsListTile: () => import(/* webpackChunkName: 'details' */ '../components/DetailsListTile.vue'),
+    DetailsListGroup: () => import(/* webpackChunkName: 'details' */ '../components/DetailsListGroup.vue'),
   },
   name: 'Home',
   data() {
