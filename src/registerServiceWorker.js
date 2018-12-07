@@ -7,7 +7,7 @@ if (process.env.NODE_ENV === 'production') {
   window.isUpdateAvailable = new Promise((resolve) => {
     window[isUpdateAvailable] = (reg) => {
       reg.update();
-      resolve();
+      resolve(true);
     };
   });
   register(`${process.env.BASE_URL}service-worker.js`, {
