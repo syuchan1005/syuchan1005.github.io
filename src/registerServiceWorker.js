@@ -6,6 +6,7 @@ if (process.env.NODE_ENV === 'production') {
   const isUpdateAvailable = Symbol('isUpdateAvailable');
   window.isUpdateAvailable = new Promise((resolve) => {
     window[isUpdateAvailable] = (reg) => {
+      console.log('[Portfolio] UpdateAvailable!');
       reg.update();
       resolve(true);
     };
