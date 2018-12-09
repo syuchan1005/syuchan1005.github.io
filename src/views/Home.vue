@@ -23,7 +23,7 @@ import { mapState } from 'vuex';
 
 export default {
   components: {
-    DetailsList: () => import(/* webpackChunkName: 'details' */ '../components/DetailsList.vue'),
+    DetailsList: () => import(/* webpackChunkName: 'detailList' */ '../components/DetailsList.vue'),
   },
   name: 'Home',
   computed: {

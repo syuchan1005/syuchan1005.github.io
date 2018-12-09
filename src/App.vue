@@ -1,6 +1,7 @@
 <template>
   <v-app>
-    <v-toolbar app class="app-header" color="green lighten-1" fixed dark>
+    <v-toolbar app class="app-header" color="green lighten-1" fixed dark
+               :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
       <v-toolbar-title class="headline text-uppercase">
         syuchan1005's Portfolio
       </v-toolbar-title>
@@ -93,6 +94,13 @@ export default {
   .app-header {
     padding-top: constant(safe-area-inset-top) !important;
     padding-top: env(safe-area-inset-top) !important;
+    height: calc(64px + constant(safe-area-inset-top)) !important;
+    height: calc(64px + env(safe-area-inset-top)) !important;
+
+    &.smAndDown {
+      height: calc(56px + constant(safe-area-inset-top)) !important;
+      height: calc(56px + env(safe-area-inset-top)) !important;
+    }
   }
 
   .app-content {
