@@ -109,6 +109,13 @@ export default {
             title: 'NPMScript Runner',
             body: 'IntelliJ IDEA用プラグイン\nNodejsのpackage.jsonのscriptsの横に実行ボタンを追加する\n現在では公式プラグインに統合されている',
           },
+          {
+            src: 'https://raw.githubusercontent.com/syuchan1005/Blueberry/master/screenshots/Top.png',
+            link: 'https://github.com/syuchan1005/Blueberry',
+            color: 'blue darken-3',
+            title: 'BlueBerry',
+            body: '写真, 動画の管理用Webシステム',
+          },
         ],
       },
     };
