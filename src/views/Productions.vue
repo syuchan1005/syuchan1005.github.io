@@ -1,7 +1,7 @@
 <template>
   <div class="productions" :style="{ '--seed': seed }">
     <template v-for="k in Object.keys(items).sort((a, b) => b - a)">
-      <div :key="k" class="display-1 white--text">{{ k }}</div>
+      <div :key="k" class="display-1">{{ k }}</div>
       <div :key="`${k}-${items[k].length}`" class="cards">
         <v-card v-for="item in items[k]" :key="`${k}-${item.title}`">
           <v-img v-if="item.src" :src="item.src" aspect-ratio="1.7778" />
