@@ -9,7 +9,7 @@ action "Filter develop" {
 }
 
 action "Add git worktree" {
-  uses = "_/alpine@3.9"
+  uses = "docker://alpine:3.9"
   needs = ["Filter develop"]
   args = "apk add git && git worktree add docs master"
 }
@@ -21,7 +21,7 @@ action "Build" {
 }
 
 action "Deploy" {
-  uses = "_/alpine@3.9"
+  uses = "docker://alpine:3.9"
   needs = ["Build"]
   args = "apk add git && git add -A && git commit -m \"Update site\" && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ${BRANCH}"
   secrets = ["GITHUB_TOKEN"]
