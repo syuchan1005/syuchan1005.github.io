@@ -1,0 +1,13 @@
+FROM alpine:3.9
+
+LABEL "com.github.actions.name"="Git(alpine)"
+LABEL "com.github.actions.description"="git"
+LABEL "com.github.actions.icon"="command"
+LABEL "com.github.actions.color"="green"
+
+LABEL "maintainer"="syuchan1005<syuchan.dev@gmail.com>"
+
+RUN apk add --no-cache git
+
+ADD entrypoint.sh /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
