@@ -11,7 +11,7 @@ action "Filter develop" {
 action "Add git worktree" {
   uses = "docker://alpine:3.9"
   needs = ["Filter develop"]
-  args = ["apk add git", "&&", "git worktree add docs master"]
+  args = ["apk", "add", "git", "&&", "git", "worktree", "add", "docs", "master"]
 }
 
 action "Build" {
