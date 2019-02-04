@@ -23,7 +23,7 @@ action "Build" {
 action "Deploy" {
   uses = "_/alpine@3.9"
   needs = ["Build"]
-  args = "mv .github docs && apk add git && git add -A && git commit -m \"Update site\" && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ${BRANCH}"
+  args = "mkdir docs/.github && mv main.workflow docs/.github/main.workflow && apk add git && git add -A && git commit -m \"Update site\" && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ${BRANCH}"
   secrets = ["GITHUB_TOKEN"]
   env = {
     BRANCH = "master"
