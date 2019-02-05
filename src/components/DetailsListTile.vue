@@ -6,10 +6,15 @@
 
     <v-list-tile-content>
       <v-list-tile-title>
-        {{ item.title }}
-        <span class="body-1 font-weight-light">{{ item.sideTitle }}</span>
+        {{ item.title.startsWith('i18n ') ? $t(item.title.substring(5)) : item.title }}
+        <span class="body-1 font-weight-light">
+          {{ item.sideTitle }}
+        </span>
       </v-list-tile-title>
-      <v-list-tile-sub-title>{{ item.subTitle }}</v-list-tile-sub-title>
+      <v-list-tile-sub-title>
+        {{ (item.subTitle && item.subTitle.startsWith('i18n '))
+            ? $t(item.subTitle.substring(5)) : item.subTitle }}
+      </v-list-tile-sub-title>
       <v-rating v-if="item.rating" v-model="item.rating" color="yellow darken-2"
                 :size="$vuetify.breakpoint.width < 750 ? 16 : 22" half-increments readonly />
     </v-list-tile-content>

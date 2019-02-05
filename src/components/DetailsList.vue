@@ -57,14 +57,14 @@ export default {
             },
             {
               avatarIcon: 'fas fa-pen-nib',
-              title: 'はてなブログ',
+              title: 'i18n detailsList.links.hatenaBlog',
               subTitle: 'syuchan1005',
               openLink: 'https://syuchan1005.hatenablog.com/',
             },
             {
               avatarIcon: 'fab fa-amazon',
-              title: 'Amazon',
-              subTitle: 'ほしいものリスト',
+              title: 'i18n detailsList.links.amazon',
+              subTitle: 'i18n detailsList.links.wishlist',
               openLink: 'http://amzn.asia/j7JpIsb',
             },
           ],
@@ -74,14 +74,14 @@ export default {
           items: [
             {
               avatarIcon: 'fas fa-id-card',
-              title: '基本情報技術者',
+              title: 'i18n detailsList.license.fe',
               sideTitle: 'FE',
-              subTitle: '2018/11/21 取得',
+              subTitle: '2018/11/21 -',
             },
             {
               avatarIcon: 'fas fa-car',
-              title: '普通運転免許',
-              subTitle: '2018/03/05 取得',
+              title: 'i18n detailsList.license.driver',
+              subTitle: '2018/03/05 -',
             },
           ],
         },

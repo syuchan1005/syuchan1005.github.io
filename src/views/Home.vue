@@ -5,15 +5,11 @@
     </div>
     <div class="information">
       <div class="display-1 font-weight-black">syuchan1005</div>
-      <div class="subheading">
-        1999/10/05 生まれ
-        <span class="body-1">2020卒 (予定)</span>
-      </div>
-      <div class="body-2" style="white-space: pre-wrap">
-        やりたいことをやっている高専生
-        就活中 (内定もらったけどまだ募集中)
-      </div>
-      <details-list />
+      <div class="subheading">{{ $t('home.birthday') }}</div>
+      <span class="body-1">{{ $t('home.info') }}</span>
+      <div class="body-2" style="white-space: pre-wrap; margin:5px"
+           v-html="$t('home.description')"></div>
+      <details-list class="list"/>
     </div>
   </div>
 </template>
@@ -73,6 +69,10 @@ export default {
       display: flex;
       flex-direction: column;
       justify-content: center;
+
+      .list {
+        margin-top: 10px;
+      }
     }
   }
 </style>

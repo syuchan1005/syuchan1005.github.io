@@ -5,6 +5,19 @@
       <v-toolbar-title class="headline text-uppercase">
         syuchan1005's Portfolio
       </v-toolbar-title>
+      <v-spacer />
+      <v-menu>
+        <v-btn fab small light slot="activator">
+          <span>{{ $i18n.locale }}</span>
+        </v-btn>
+
+        <v-list>
+          <v-list-tile v-for="lang in Object.keys($i18n.messages)" :key="lang"
+            @click="$i18n.locale = lang">
+            <v-list-tile-title>{{ lang }}</v-list-tile-title>
+          </v-list-tile>
+        </v-list>
+      </v-menu>
     </v-toolbar>
 
     <v-content class="app-content" :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
@@ -22,8 +35,10 @@
 
     <div class="alert">
       <v-alert :value="showReloadAlert" type="warning" dismissible>
-        <div>新しいアップデートがあります! リロードして更新して下さい.</div>
-        <v-btn color="primary" round block @click="locationReload(true)">Reload</v-btn>
+        <div>{{ $t('app.reloadAlert') }}</div>
+        <v-btn color="primary" round block @click="locationReload(true)">
+          {{ $t('app.reload') }}
+        </v-btn>
       </v-alert>
     </div>
   </v-app>
@@ -65,7 +80,7 @@ export default {
     },
   },
   mounted() {
-    if (window.isUpdateAvailable) { // PWA用の更新処理
+    if (window.isUpdateAvailable) {
       window.isUpdateAvailable.then((available) => {
         this.showReloadAlert = available;
       });
