@@ -11,7 +11,7 @@ action "Filter develop" {
 action "Add git worktree" {
   uses = "./action-git/"
   needs = ["Filter develop"]
-  args = "git status"
+  args = ["git", "worktree", "add", "docs", "master"]
 }
 
 action "Build" {
