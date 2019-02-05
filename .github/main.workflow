@@ -29,6 +29,6 @@ action "Build" {
 action "Deploy" {
   uses = "./action-git/"
   needs = ["Build"]
-  args = "cd docs && git add -A && git commit -m 'Update site' && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
+  args = "cd docs && echo -e '.gitignore\n.github/' > .gitignore && git add -A && git commit -m 'Update site' && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
   secrets = ["GITHUB_TOKEN"]
 }
