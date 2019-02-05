@@ -7,7 +7,9 @@ LABEL "com.github.actions.color"="green"
 
 LABEL "maintainer"="syuchan1005<syuchan.dev@gmail.com>"
 
-RUN apk add --no-cache git
-
 ADD entrypoint.sh /entrypoint.sh
+
+RUN apk add --no-cache git \
+    && chmod 777 entrypoint.sh
+
 ENTRYPOINT ["/entrypoint.sh"]
