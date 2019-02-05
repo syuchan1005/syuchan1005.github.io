@@ -11,19 +11,25 @@ action "Filter develop" {
 action "Add git worktree" {
   uses = "./action-git/"
   needs = ["Filter develop"]
-  args = "git status"
+  args = "git worktree add docs master"
+}
+
+action "Install" {
+  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  needs = ["Add git worktree"]
+  args = "ci" 
 }
 
 action "Build" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
-  needs = ["Add git worktree"]
-  args = "npm ci && npm run build"
+  needs = ["Install"]
+  args = "run build"
 }
 
 action "Deploy" {
-  uses = "docker://alpine:3.9"
+  uses = "./action-git/"
   needs = ["Build"]
-  args = "apk add git && git add -A && git commit -m \"Update site\" && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ${BRANCH}"
+  args = "git add -A && git commit -m 'Update site' && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ${BRANCH}"
   secrets = ["GITHUB_TOKEN"]
   env = {
     BRANCH = "master"
