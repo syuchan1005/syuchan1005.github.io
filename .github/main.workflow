@@ -17,7 +17,7 @@ action "Add git worktree" {
 action "Install" {
   uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Add git worktree"]
-  args = "ci" 
+  args = "ci"
 }
 
 action "Build" {
@@ -29,9 +29,6 @@ action "Build" {
 action "Deploy" {
   uses = "./action-git/"
   needs = ["Build"]
-  args = "git add -A && git commit -m 'Update site' && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git ${BRANCH}"
+  args = "cd docs && git add -A && git commit -m 'Update site' && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
   secrets = ["GITHUB_TOKEN"]
-  env = {
-    BRANCH = "master"
-  }
 }
