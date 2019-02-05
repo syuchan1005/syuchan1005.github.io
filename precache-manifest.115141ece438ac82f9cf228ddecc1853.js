@@ -116,60 +116,60 @@ self.__precacheManifest = [
     "url": "/icon.png"
   },
   {
-    "revision": "a0dbdd6be5c93b321b47134ebc7ed9ac",
-    "url": "/icons/128.png"
-  },
-  {
-    "revision": "06c110742561a524e98bc4da0fe75aa4",
-    "url": "/icons/120.png"
+    "revision": "84b2559f58f8e6888cca4f0971738311",
+    "url": "/icons/152.png"
   },
   {
     "revision": "faab6552badd400b92a576a1ef5ee6cd",
     "url": "/icons/16.png"
   },
   {
-    "revision": "cd844cbff4dbda31332e471b7a335fa4",
-    "url": "/icons/180.png"
-  },
-  {
-    "revision": "84b2559f58f8e6888cca4f0971738311",
-    "url": "/icons/152.png"
+    "revision": "a0dbdd6be5c93b321b47134ebc7ed9ac",
+    "url": "/icons/128.png"
   },
   {
     "revision": "5088662e6dec28f598f35bbcf4fd55ea",
     "url": "/icons/144.png"
   },
   {
-    "revision": "73b74cda34eafa576f84d9613e4dac0b",
-    "url": "/icons/195.png"
+    "revision": "06c110742561a524e98bc4da0fe75aa4",
+    "url": "/icons/120.png"
   },
   {
-    "revision": "23b5b2a332d5cf79046c22f31317999f",
-    "url": "/icons/228.png"
-  },
-  {
-    "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
-    "url": "/icons/196.png"
+    "revision": "cd844cbff4dbda31332e471b7a335fa4",
+    "url": "/icons/180.png"
   },
   {
     "revision": "8af2bb086e10f88981f48c2b3dcc248e",
     "url": "/icons/192.png"
   },
   {
+    "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
+    "url": "/icons/196.png"
+  },
+  {
+    "revision": "23b5b2a332d5cf79046c22f31317999f",
+    "url": "/icons/228.png"
+  },
+  {
+    "revision": "73b74cda34eafa576f84d9613e4dac0b",
+    "url": "/icons/195.png"
+  },
+  {
     "revision": "cfae9ead17319d7e6276546db06ee821",
     "url": "/icons/24.png"
   },
   {
-    "revision": "34d381607f838ea06260801c0cc282c2",
-    "url": "/icons/48.png"
+    "revision": "52bfab1c3d8c69ed65a431d9363bac00",
+    "url": "/icons/270.png"
   },
   {
     "revision": "620d2bb2cdb66f3f8f9a67a2fa8e509e",
     "url": "/icons/32.png"
   },
   {
-    "revision": "52bfab1c3d8c69ed65a431d9363bac00",
-    "url": "/icons/270.png"
+    "revision": "34d381607f838ea06260801c0cc282c2",
+    "url": "/icons/48.png"
   },
   {
     "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
@@ -192,12 +192,12 @@ self.__precacheManifest = [
     "url": "/icons/96.png"
   },
   {
-    "revision": "98e29fd635129c72695469f9260755ba",
-    "url": "/painters/BackgroundPainter.js"
-  },
-  {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "98e29fd635129c72695469f9260755ba",
+    "url": "/painters/BackgroundPainter.js"
   },
   {
     "revision": "4bfac9fa6bc7d6c0785c",
