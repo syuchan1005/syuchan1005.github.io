@@ -9,7 +9,7 @@ LABEL "maintainer"="syuchan1005<syuchan.dev@gmail.com>"
 
 ADD entrypoint.sh /entrypoint.sh
 
-RUN apk add --no-cache git \
+RUN apk add --no-cache git jq \
     && chmod 777 entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
