@@ -27,7 +27,9 @@ export default {
     avatarSize() {
       let preWidth = this.$vuetify.breakpoint.width / 3;
       if (this.$vuetify.breakpoint.xsOnly) preWidth *= 2;
-      return Math.min(preWidth, this.$vuetify.breakpoint.height / 2);
+      preWidth = Math.min(preWidth, this.$vuetify.breakpoint.height / 2);
+      if (preWidth % 8 !== 0) preWidth += (8 - (preWidth % 8));
+      return preWidth;
     },
   },
 };
