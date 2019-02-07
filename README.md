@@ -1,5 +1,5 @@
 # syuchan1005.github.io
-[![CircleCI](https://circleci.com/gh/syuchan1005/syuchan1005.github.io.svg?style=svg)](https://circleci.com/gh/syuchan1005/syuchan1005.github.io)
+![GitHub Actions](https://img.shields.io/badge/Github%20Actions-success-brightgreen.svg)
 
 ## Project setup
 ```
