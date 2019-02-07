@@ -112,16 +112,24 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "06c110742561a524e98bc4da0fe75aa4",
-    "url": "/icons/120.png"
+    "revision": "c328f61d20b09b0e39499d83732ee76d",
+    "url": "/icon.png"
   },
   {
     "revision": "a0dbdd6be5c93b321b47134ebc7ed9ac",
     "url": "/icons/128.png"
   },
   {
-    "revision": "c328f61d20b09b0e39499d83732ee76d",
-    "url": "/icon.png"
+    "revision": "06c110742561a524e98bc4da0fe75aa4",
+    "url": "/icons/120.png"
+  },
+  {
+    "revision": "5088662e6dec28f598f35bbcf4fd55ea",
+    "url": "/icons/144.png"
+  },
+  {
+    "revision": "cd844cbff4dbda31332e471b7a335fa4",
+    "url": "/icons/180.png"
   },
   {
     "revision": "84b2559f58f8e6888cca4f0971738311",
@@ -132,20 +140,12 @@ self.__precacheManifest = [
     "url": "/icons/16.png"
   },
   {
-    "revision": "cd844cbff4dbda31332e471b7a335fa4",
-    "url": "/icons/180.png"
-  },
-  {
-    "revision": "5088662e6dec28f598f35bbcf4fd55ea",
-    "url": "/icons/144.png"
+    "revision": "73b74cda34eafa576f84d9613e4dac0b",
+    "url": "/icons/195.png"
   },
   {
     "revision": "8af2bb086e10f88981f48c2b3dcc248e",
     "url": "/icons/192.png"
-  },
-  {
-    "revision": "73b74cda34eafa576f84d9613e4dac0b",
-    "url": "/icons/195.png"
   },
   {
     "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
@@ -156,6 +156,10 @@ self.__precacheManifest = [
     "url": "/icons/228.png"
   },
   {
+    "revision": "52bfab1c3d8c69ed65a431d9363bac00",
+    "url": "/icons/270.png"
+  },
+  {
     "revision": "cfae9ead17319d7e6276546db06ee821",
     "url": "/icons/24.png"
   },
@@ -164,16 +168,8 @@ self.__precacheManifest = [
     "url": "/icons/32.png"
   },
   {
-    "revision": "52bfab1c3d8c69ed65a431d9363bac00",
-    "url": "/icons/270.png"
-  },
-  {
     "revision": "34d381607f838ea06260801c0cc282c2",
     "url": "/icons/48.png"
-  },
-  {
-    "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
-    "url": "/icons/512.png"
   },
   {
     "revision": "9eb0e3031b79635d1f445d7e7568204b",
@@ -186,6 +182,10 @@ self.__precacheManifest = [
   {
     "revision": "e456f6f67a10b7bba868cb73a19a187f",
     "url": "/icons/76.png"
+  },
+  {
+    "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
+    "url": "/icons/512.png"
   },
   {
     "revision": "2233a5f5e1dc2cd3cb62a739d3ff321e",
