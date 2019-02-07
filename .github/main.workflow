@@ -29,6 +29,6 @@ action "Build" {
 action "Deploy" {
   uses = "./action-git/"
   needs = ["Build"]
-  args = "cd docs && git status && git add -A && git reset -q -- .github/main.workflow && git commit -m \"$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].message')\" && git status && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
+  args = "cd docs && date && git status && git add -A && git reset -q -- .github/main.workflow && git commit -m \"$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].message')\" && date && git status && git push https://${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
   secrets = ["GITHUB_TOKEN"]
 }
