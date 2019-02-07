@@ -112,10 +112,6 @@ self.__precacheManifest = [
     "url": "/index.html"
   },
   {
-    "revision": "c328f61d20b09b0e39499d83732ee76d",
-    "url": "/icon.png"
-  },
-  {
     "revision": "06c110742561a524e98bc4da0fe75aa4",
     "url": "/icons/120.png"
   },
@@ -124,20 +120,24 @@ self.__precacheManifest = [
     "url": "/icons/128.png"
   },
   {
-    "revision": "5088662e6dec28f598f35bbcf4fd55ea",
-    "url": "/icons/144.png"
+    "revision": "c328f61d20b09b0e39499d83732ee76d",
+    "url": "/icon.png"
   },
   {
     "revision": "84b2559f58f8e6888cca4f0971738311",
     "url": "/icons/152.png"
   },
   {
+    "revision": "faab6552badd400b92a576a1ef5ee6cd",
+    "url": "/icons/16.png"
+  },
+  {
     "revision": "cd844cbff4dbda31332e471b7a335fa4",
     "url": "/icons/180.png"
   },
   {
-    "revision": "faab6552badd400b92a576a1ef5ee6cd",
-    "url": "/icons/16.png"
+    "revision": "5088662e6dec28f598f35bbcf4fd55ea",
+    "url": "/icons/144.png"
   },
   {
     "revision": "8af2bb086e10f88981f48c2b3dcc248e",
@@ -168,6 +168,10 @@ self.__precacheManifest = [
     "url": "/icons/270.png"
   },
   {
+    "revision": "34d381607f838ea06260801c0cc282c2",
+    "url": "/icons/48.png"
+  },
+  {
     "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
     "url": "/icons/512.png"
   },
@@ -180,10 +184,6 @@ self.__precacheManifest = [
     "url": "/icons/64.png"
   },
   {
-    "revision": "34d381607f838ea06260801c0cc282c2",
-    "url": "/icons/48.png"
-  },
-  {
     "revision": "e456f6f67a10b7bba868cb73a19a187f",
     "url": "/icons/76.png"
   },
@@ -192,12 +192,12 @@ self.__precacheManifest = [
     "url": "/icons/96.png"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
-    "url": "/robots.txt"
-  },
-  {
     "revision": "98e29fd635129c72695469f9260755ba",
     "url": "/painters/BackgroundPainter.js"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "url": "/robots.txt"
   },
   {
     "revision": "4bfac9fa6bc7d6c0785c",
