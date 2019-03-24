@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "node mv docs/.git docs.git && vue-cli-service build --report && node mv docs.git docs/.git && echo > docs/.nojekyll",
+    "build": "node mv docs/.git docs.git && vue-cli-service build --report && node mv docs.git docs/.git",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {

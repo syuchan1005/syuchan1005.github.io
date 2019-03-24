@@ -67,11 +67,6 @@ export default {
               subTitle: 'i18n detailsList.links.wishlist',
               openLink: 'http://amzn.asia/j7JpIsb',
             },
-            {
-              title: 'Sourcerer',
-              subTitle: 'syuchan1005',
-              openLink: 'https://sourcerer.io/syuchan1005',
-            },
           ],
         },
         {
