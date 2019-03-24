@@ -1,6 +1,9 @@
 module.exports = {
   outputDir: 'docs',
   productionSourceMap: false,
+  devServer: {
+    disableHostCheck: true,
+  },
   pwa: {
     workboxPluginMode: 'InjectManifest',
     workboxOptions: {
