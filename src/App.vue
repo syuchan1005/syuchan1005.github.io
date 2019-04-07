@@ -1,20 +1,46 @@
 <template>
-  <v-app>
+  <v-app :dark="darkMode">
     <v-toolbar app class="app-header" color="green lighten-1" fixed dark
                :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
       <v-toolbar-title class="headline text-uppercase">
-        syuchan1005's Portfolio
+        syuchan1005<span style="text-transform:none">'s</span> Portfolio
       </v-toolbar-title>
-      <v-spacer />
-      <v-menu>
-        <v-btn fab small light slot="activator">
-          <span>{{ $i18n.locale }}</span>
-        </v-btn>
 
+      <v-spacer />
+
+      <v-menu bottom left :close-on-content-click="false">
+        <template v-slot:activator="{ on }">
+          <v-btn icon v-on="on">
+            <v-icon>settings</v-icon>
+          </v-btn>
+        </template>
         <v-list>
-          <v-list-tile v-for="lang in Object.keys($i18n.messages)" :key="lang"
-            @click="$i18n.locale = lang">
-            <v-list-tile-title>{{ lang }}</v-list-tile-title>
+          <v-list-tile>
+            <v-list-tile-action>
+              <v-switch v-model="darkMode" />
+            </v-list-tile-action>
+            <v-list-tile-title>DarkMode</v-list-tile-title>
+          </v-list-tile>
+          <v-divider />
+          <v-list-tile>
+            <v-list-tile-content>
+              <v-list-tile-title>Language</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <v-menu>
+                <template v-slot:activator="{ on: onLang }">
+                  <v-btn icon v-on="onLang">
+                    <v-icon>keyboard_arrow_right</v-icon>
+                  </v-btn>
+                </template>
+                <v-list>
+                  <v-list-tile v-for="l in $i18n.availableLocales" :key="l"
+                    @click="$i18n.locale = l">
+                    {{$t('name', l)}}
+                  </v-list-tile>
+                </v-list>
+              </v-menu>
+            </v-list-tile-action>
           </v-list-tile>
         </v-list>
       </v-menu>
@@ -24,7 +50,7 @@
       <router-view/>
     </v-content>
 
-    <v-bottom-nav app class="app-footer" fixed dark
+    <v-bottom-nav app class="app-footer" fixed
                   :value="true" :active.sync="bottomNav" v-if="appMounted">
       <v-btn v-for="item in navItems" :key="item.path"
              :color="item.color" :value="item.path" flat>
@@ -64,6 +90,12 @@ export default {
           icon: 'dns',
           color: 'orange',
         },
+        /* {
+          path: '/history',
+          text: 'history',
+          icon: 'timeline',
+          color: 'green',
+        }, */
       ],
       showReloadAlert: false,
     };
@@ -76,6 +108,14 @@ export default {
       },
       set(val) {
         this.$router.push(val);
+      },
+    },
+    darkMode: {
+      get() {
+        return this.$store.state.darkMode;
+      },
+      set(val) {
+        this.$store.commit('darkMode', val);
       },
     },
   },

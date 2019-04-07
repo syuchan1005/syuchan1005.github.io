@@ -1,5 +1,6 @@
 export default {
   ja: {
+    name: '日本語',
     app: {
       reloadAlert: '新しいアップデートがあります! リロードして更新して下さい.',
       reload: 'リロード',
@@ -22,6 +23,7 @@ export default {
     },
   },
   en: {
+    name: 'English',
     app: {
       reloadAlert: 'Coming new Update! Please reload.',
       reload: 'Reload',
