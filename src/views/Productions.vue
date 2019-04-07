@@ -1,5 +1,5 @@
 <template>
-  <div class="productions" :style="{ '--seed': seed }">
+  <div class="productions" :style="{ '--seed': seed }" :class="{ dark: darkMode }">
     <template v-for="k in Object.keys(items).sort((a, b) => b - a)">
       <div :key="k" class="display-1">{{ k }}</div>
       <div :key="`${k}-${items[k].length}`" class="cards">
@@ -55,6 +55,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
   name: 'Productions',
   data() {
@@ -120,6 +122,9 @@ export default {
       },
     };
   },
+  computed: {
+    ...mapState(['darkMode']),
+  },
   methods: {
     textColor(color) {
       const c = color.split(' ');
@@ -136,9 +141,12 @@ export default {
     height: 100%;
     background-image: paint(material-gb);
     --background-color: #53E3D1;
-    --colors: #FEA78C #FFA3A6 #90C4E9 #F7DB70
-    #EABEBF #75CCE8 #A5DEE5 #80BEAF
-    #B3DDD1 #F5B994;
+    --colors: #FEA78C #FFA3A6 #90C4E9 #F7DB70 #EABEBF #75CCE8 #A5DEE5 #80BEAF #B3DDD1 #F5B994;
+
+    &.dark {
+      --background-color: #349085;
+      --colors: #9e6857 #945f60 #537287 #88793e #917676 #4c8496 #698e92 #6da295 #85a49b #bf9073;
+    }
   }
 
   .cards {
