@@ -2,13 +2,12 @@
 
 import { register } from 'register-service-worker';
 
-if (process.env.NODE_ENV === 'production') {
+if (process.env.NODE_ENV === 'production' || true) {
   const isUpdateAvailable = Symbol('isUpdateAvailable');
   window.isUpdateAvailable = new Promise((resolve) => {
     window[isUpdateAvailable] = (reg) => {
-      console.log('[Portfolio] UpdateAvailable!');
       reg.update();
-      resolve(true);
+      resolve(navigator.serviceWorker.controller != null);
     };
   });
   register(`${process.env.BASE_URL}service-worker.js`, {

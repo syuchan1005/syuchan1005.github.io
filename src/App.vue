@@ -59,14 +59,12 @@
       </v-btn>
     </v-bottom-nav>
 
-    <div class="alert">
-      <v-alert :value="showReloadAlert" type="warning" dismissible>
-        <div>{{ $t('app.reloadAlert') }}</div>
-        <v-btn color="primary" round block @click="locationReload(true)">
-          {{ $t('app.reload') }}
-        </v-btn>
-      </v-alert>
-    </div>
+    <v-snackbar v-model="showReloadAlert" bottom :timeout="0" color="error">
+      <div>{{ $t('app.reloadAlert') }}</div>
+      <v-btn outline @click="locationReload(true)">
+        {{ $t('app.reload') }}
+      </v-btn>
+    </v-snackbar>
   </v-app>
 </template>
 
@@ -178,16 +176,5 @@ export default {
     height: auto !important;
     padding-bottom: constant(safe-area-inset-bottom) !important;
     padding-bottom: env(safe-area-inset-bottom) !important;
-  }
-
-  .alert {
-    z-index: 10;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-
-    .v-alert:last-child {
-      margin-bottom: 0;
-    }
   }
 </style>
