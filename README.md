@@ -1,6 +1,4 @@
 # syuchan1005.github.io
-![GitHub Actions](https://img.shields.io/badge/Github%20Actions-success-brightgreen.svg)
-
 ## Project setup
 ```
 npm install

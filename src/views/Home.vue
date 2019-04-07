@@ -16,10 +16,11 @@
 
 <script>
 import { mapState } from 'vuex';
+import DetailsList from '../components/DetailsList.vue';
 
 export default {
   components: {
-    DetailsList: () => import(/* webpackChunkName: 'detailList' */ '../components/DetailsList.vue'),
+    DetailsList,
   },
   name: 'Home',
   computed: {
