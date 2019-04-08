@@ -12,7 +12,7 @@ import store from './store';
 import messages from './i18n';
 
 if (CSS && CSS.paintWorklet && CSS.paintWorklet.addModule) {
-  CSS.paintWorklet.addModule('/painters/BackgroundPainter.js');
+  CSS.paintWorklet.addModule('js/backgroundPainter.js');
 }
 
 Vue.config.devtools = process.env.NODE_ENV !== 'production';

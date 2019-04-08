@@ -20,4 +20,17 @@ module.exports = {
     themeColor: '#66bb6a',
     msTileColor: '#66bb6a',
   },
+  chainWebpack(config) {
+    config.plugin('copy')
+      .tap(args => [
+        [
+          ...args[0],
+          {
+            toType: 'file',
+            from: args[0][0].from.replace('public', 'src\\backgroundPainter.min.js'),
+            to: `${args[0][0].to}\\js\\backgroundPainter.js`,
+          },
+        ],
+      ]);
+  },
 };

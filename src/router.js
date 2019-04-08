@@ -2,7 +2,7 @@ import Vue from 'vue';
 import Router from 'vue-router';
 import Home from './views/Home.vue';
 
-const AsyncProductions = () => import(/* webpackChunkName: 'production',webpackPrefetch: true */ './views/Productions.vue');
+const AsyncProductions = () => import(/* webpackChunkName: 'production',webpackPreload: true */ './views/Productions.vue');
 
 export default new Router({
   routes: [
