@@ -9,13 +9,15 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
+    "axios": "^0.18.0",
     "material-design-icons-iconfont": "^4.0.5",
     "register-service-worker": "^1.6.2",
     "vue": "^2.6.10",
     "vue-i18n": "^8.10.0",
-    "vue-router": "^3.0.2",
-    "vuetify": "^1.5.9",
-    "vuex": "^3.1.0"
+    "vue-router": "^3.0.3",
+    "vuetify": "^1.5.11",
+    "vuex": "^3.1.0",
+    "webpack": "^4.29.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.5",

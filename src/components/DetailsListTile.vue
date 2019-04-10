@@ -35,7 +35,12 @@
         </v-btn>
         <span>{{ item.openTip }}</span>
       </v-tooltip>
-      <v-btn icon v-else :href="item.openLink" rel="noopener" :aria-label="item.title"
+      <v-btn v-else-if="item.openAction" @click="$emit('clickAction', item.openAction)"
+             icon aria-label="open contact form">
+        <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
+      </v-btn>
+      <v-btn icon v-else :href="item.openLink"
+             rel="noopener" :aria-label="item.title"
              :target="item.openTarget === null ? null : item.openTarget || '_blank'">
         <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
       </v-btn>

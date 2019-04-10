@@ -4,7 +4,11 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
+const setDarkMode = (val) => {
+  document.body.style.backgroundColor = val ? '#303030' : '#FAFAFA';
+};
+
+const store = new Vuex.Store({
   state: {
     appMounted: false,
     darkMode: false,
@@ -15,6 +19,12 @@ export default new Vuex.Store({
     },
     darkMode(state, val) {
       state.darkMode = val;
+
+      setDarkMode(val);
     },
   },
 });
+
+export const applyDarkMode = () => setDarkMode(store.state.darkMode);
+
+export default store;

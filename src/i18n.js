@@ -21,6 +21,14 @@ export default {
         driver: '普通運転免許 (AT限定)',
       },
     },
+    contact: {
+      email: 'メールアドレス (返信が必要な場合のみ)',
+      name: '名前 (返信が必要な場合のみ)',
+      title: 'タイトル',
+      message: '内容',
+      success: '送信しました。',
+      failure: '送信に失敗しました。',
+    },
   },
   en: {
     name: 'English',
@@ -43,6 +51,14 @@ export default {
         fe: 'Fundamental Information Technology Engineer Examination',
         driver: 'Drivers License (AT, Japan)',
       },
+    },
+    contact: {
+      email: 'E-Mail (when need reply)',
+      name: 'Name (when need reply)',
+      title: 'Title',
+      message: 'Message',
+      success: 'Message sent successfully',
+      failure: 'Message sent failure',
     },
   },
 };

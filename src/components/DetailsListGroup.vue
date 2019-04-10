@@ -9,8 +9,10 @@
 
     <template v-for="subItem in item.items">
       <details-list-tile :item="subItem" v-if="lazy && !subItem.items"
+                         @clickAction="(args) => $emit('clickAction', args)"
                          :key="`${subItem.title} ${subItem.sideTitle} ${subItem.subTitle}`" />
       <details-list-group :item="subItem" sub-group v-else-if="lazy"
+                          @clickAction="(args) => $emit('clickAction', args)"
                           :key="`${subItem.title} ${subItem.sideTitle} ${subItem.subTitle}`" />
     </template>
   </v-list-group>

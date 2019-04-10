@@ -70,6 +70,7 @@
 
 <script>
 import { mapState } from 'vuex';
+import { applyDarkMode } from '@/store';
 
 export default {
   name: 'App',
@@ -118,6 +119,8 @@ export default {
     },
   },
   mounted() {
+    applyDarkMode();
+
     if (window.isUpdateAvailable) {
       window.isUpdateAvailable.then((available) => {
         this.showReloadAlert = available;
@@ -139,6 +142,10 @@ export default {
     height: 100%;
     margin: 0;
     padding: 0;
+  }
+
+  .v-list__group__items--no-action .v-list__tile {
+    padding-left: 32px;
   }
 </style>
 
