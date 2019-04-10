@@ -63,6 +63,25 @@ export default {
     return {
       seed: Date.now(),
       items: {
+        2019: [
+          {
+            color: 'cyan darken-1',
+            title: 'Reveal in ProjectView',
+            link: 'https://github.com/syuchan1005/RevealInProjectView',
+            body: 'IntelliJ IDEA用プラグイン\nProjectTreeの複数のViewからProjectViewに移動するオプションを追加する。',
+          },
+          {
+            color: 'pink accent-2',
+            title: 'LoveSync',
+            link: 'https://github.com/syuchan1005/LoveSync',
+            body: 'パートナー同士で[Secret]したいときに押すボタンを提供する。',
+            more: [
+              ['フロントエンド', 'Vue.js', 'Vuetify'],
+              ['バックエンド', 'Koa.js', 'GraphQL'],
+              ['他', 'SQLite'],
+            ],
+          },
+        ],
         2018: [
           {
             color: 'green lighten-1',

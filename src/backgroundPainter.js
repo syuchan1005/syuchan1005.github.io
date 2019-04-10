@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign, class-methods-use-this, no-bitwise */
-class BackgroundPainter {
+// eslint-disable-next-line no-undef
+registerPaint('material-gb', class {
   constructor() {
     /* MersenneTwister */
     this.N = 624;
@@ -96,7 +97,4 @@ class BackgroundPainter {
     this.context.fill();
     this.context.restore();
   }
-}
-
-// eslint-disable-next-line no-undef
-registerPaint('material-gb', BackgroundPainter);
+});

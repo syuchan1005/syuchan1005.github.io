@@ -10,7 +10,7 @@
 
       <v-menu bottom left :close-on-content-click="false">
         <template v-slot:activator="{ on }">
-          <v-btn icon v-on="on">
+          <v-btn icon v-on="on" aria-label="settings">
             <v-icon>settings</v-icon>
           </v-btn>
         </template>
@@ -77,23 +77,23 @@ export default {
     return {
       navItems: [
         {
+          path: '/productions',
+          text: 'Productions',
+          icon: 'dns',
+          color: 'orange',
+        },
+        {
           path: '/',
           text: 'Home',
           icon: 'home',
           color: 'blue',
         },
         {
-          path: '/productions',
-          text: 'Productions',
-          icon: 'dns',
-          color: 'orange',
-        },
-        /* {
-          path: '/history',
-          text: 'history',
+          path: '/histories',
+          text: 'History',
           icon: 'timeline',
           color: 'green',
-        }, */
+        },
       ],
       showReloadAlert: false,
     };
