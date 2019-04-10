@@ -5,8 +5,7 @@ import { register } from 'register-service-worker';
 if (process.env.NODE_ENV === 'production') {
   const isUpdateAvailable = Symbol('isUpdateAvailable');
   window.isUpdateAvailable = new Promise((resolve) => {
-    window[isUpdateAvailable] = (reg) => {
-      reg.update();
+    window[isUpdateAvailable] = () => {
       resolve(navigator.serviceWorker.controller != null);
     };
   });
