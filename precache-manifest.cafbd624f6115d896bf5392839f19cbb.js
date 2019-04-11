@@ -1,11 +1,11 @@
 self.__precacheManifest = [
   {
-    "revision": "0bc1afe22b950a0f61bc",
+    "revision": "e2425a4686a4106252f6",
     "url": "/css/app.36a475d7.css"
   },
   {
-    "revision": "0bc1afe22b950a0f61bc",
-    "url": "/js/app.f0f18749.js"
+    "revision": "e2425a4686a4106252f6",
+    "url": "/js/app.2321c533.js"
   },
   {
     "revision": "7bcfec6a3baaed7560cb",
@@ -16,6 +16,14 @@ self.__precacheManifest = [
     "url": "/js/chunk-vendors.8e44149a.js"
   },
   {
+    "revision": "25f2d3f770ebb06e4dee",
+    "url": "/css/details-list.546c9a28.css"
+  },
+  {
+    "revision": "25f2d3f770ebb06e4dee",
+    "url": "/js/details-list.5e22b13d.js"
+  },
+  {
     "revision": "de7bdf523816a24f29f7",
     "url": "/css/history.6ff326fb.css"
   },
@@ -24,12 +32,12 @@ self.__precacheManifest = [
     "url": "/js/history.69fb04c8.js"
   },
   {
-    "revision": "20449f53af2cf0c98392",
-    "url": "/css/home.3baaa168.css"
+    "revision": "706f90825eba8889fd69",
+    "url": "/css/home.2aca4f8a.css"
   },
   {
-    "revision": "20449f53af2cf0c98392",
-    "url": "/js/home.9c53cd58.js"
+    "revision": "706f90825eba8889fd69",
+    "url": "/js/home.c415557e.js"
   },
   {
     "revision": "cc9c9e8da6dd402b84c2",
@@ -80,12 +88,12 @@ self.__precacheManifest = [
     "url": "/fonts/fa-brands-400.98b6db59.ttf"
   },
   {
-    "revision": "46e7cec623d8bd790d9fdbc8de2d3ee7",
-    "url": "/fonts/fa-solid-900.46e7cec6.eot"
-  },
-  {
     "revision": "ff8d9f8adb0d09f11d4816a152672f53",
     "url": "/fonts/fa-solid-900.ff8d9f8a.ttf"
+  },
+  {
+    "revision": "46e7cec623d8bd790d9fdbc8de2d3ee7",
+    "url": "/fonts/fa-solid-900.46e7cec6.eot"
   },
   {
     "revision": "5eb754ab7dbd2fee562360528db4c3c0",
@@ -100,7 +108,7 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.49279363.svg"
   },
   {
-    "revision": "9b3ae1af00dfdf188e3cb16059b62f02",
+    "revision": "dc1f2553ebb9b59a4594c4beb13497aa",
     "url": "/index.html"
   },
   {
@@ -108,16 +116,12 @@ self.__precacheManifest = [
     "url": "/js/backgroundPainter.js"
   },
   {
-    "revision": "06c110742561a524e98bc4da0fe75aa4",
-    "url": "/icons/120.png"
+    "revision": "c328f61d20b09b0e39499d83732ee76d",
+    "url": "/icon.png"
   },
   {
     "revision": "a0dbdd6be5c93b321b47134ebc7ed9ac",
     "url": "/icons/128.png"
-  },
-  {
-    "revision": "c328f61d20b09b0e39499d83732ee76d",
-    "url": "/icon.png"
   },
   {
     "revision": "5088662e6dec28f598f35bbcf4fd55ea",
@@ -128,20 +132,24 @@ self.__precacheManifest = [
     "url": "/icons/152.png"
   },
   {
-    "revision": "faab6552badd400b92a576a1ef5ee6cd",
-    "url": "/icons/16.png"
+    "revision": "06c110742561a524e98bc4da0fe75aa4",
+    "url": "/icons/120.png"
   },
   {
     "revision": "8af2bb086e10f88981f48c2b3dcc248e",
     "url": "/icons/192.png"
   },
   {
-    "revision": "73b74cda34eafa576f84d9613e4dac0b",
-    "url": "/icons/195.png"
+    "revision": "faab6552badd400b92a576a1ef5ee6cd",
+    "url": "/icons/16.png"
   },
   {
     "revision": "cd844cbff4dbda31332e471b7a335fa4",
     "url": "/icons/180.png"
+  },
+  {
+    "revision": "73b74cda34eafa576f84d9613e4dac0b",
+    "url": "/icons/195.png"
   },
   {
     "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
@@ -164,16 +172,12 @@ self.__precacheManifest = [
     "url": "/icons/32.png"
   },
   {
-    "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
-    "url": "/icons/512.png"
-  },
-  {
     "revision": "34d381607f838ea06260801c0cc282c2",
     "url": "/icons/48.png"
   },
   {
-    "revision": "9eb0e3031b79635d1f445d7e7568204b",
-    "url": "/icons/57.png"
+    "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
+    "url": "/icons/512.png"
   },
   {
     "revision": "65b5e8da454ffb761087b3387d448499",
@@ -184,8 +188,8 @@ self.__precacheManifest = [
     "url": "/icons/76.png"
   },
   {
-    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
-    "url": "/robots.txt"
+    "revision": "9eb0e3031b79635d1f445d7e7568204b",
+    "url": "/icons/57.png"
   },
   {
     "revision": "2233a5f5e1dc2cd3cb62a739d3ff321e",
@@ -194,5 +198,9 @@ self.__precacheManifest = [
   {
     "revision": "4cacbe39c7c983cc8d51eed1b6630fb0",
     "url": "/safari-pinned-tab.svg"
+  },
+  {
+    "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
+    "url": "/robots.txt"
   }
 ];
