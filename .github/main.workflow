@@ -9,7 +9,7 @@ action "Filter develop" {
 }
 
 action "Add git worktree" {
-  uses = "./action-git/"
+  uses = "./action-git"
   needs = ["Filter develop"]
   args = "git worktree add docs master"
 }
@@ -27,7 +27,7 @@ action "Build" {
 }
 
 action "Deploy" {
-  uses = "./action-git/"
+  uses = "./action-git"
   needs = ["Build"]
   args = "cd docs && git add -A && git commit -m \"$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].message')\" && git push https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
   secrets = ["ACCESS_TOKEN"]
