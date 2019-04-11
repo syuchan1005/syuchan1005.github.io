@@ -15,12 +15,12 @@
       <v-card>
         <v-toolbar dark color="green lighten-1">
           <v-btn icon @click="showContact = false">
-            <v-icon>close</v-icon>
+            <v-icon>{{$vuetify.icons.close}}</v-icon>
           </v-btn>
           <v-toolbar-title>Contact</v-toolbar-title>
           <v-spacer />
           <v-btn icon @click="submitForm">
-            <v-icon>send</v-icon>
+            <v-icon>{{$vuetify.icons.send}}</v-icon>
           </v-btn>
         </v-toolbar>
         <v-card-text>
@@ -51,6 +51,7 @@
 </template>
 
 <script>
+import vue from 'vue';
 import { mapState } from 'vuex';
 import axios from 'axios';
 
@@ -89,19 +90,19 @@ export default {
         active: true,
         items: [
           {
-            avatarIcon: 'mail',
+            avatarIcon: vue.prototype.$vuetify.icons.mail,
             title: 'Email',
             subTitle: 'syuchan.dev@gmail.com',
             openTip: 'mailto',
-            openIcon: 'send',
+            openIcon: vue.prototype.$vuetify.icons.send,
             openLink: 'mailto:syuchan.dev@gmail.com',
             openTarget: null,
           },
           {
-            avatarIcon: 'contacts',
+            avatarIcon: vue.prototype.$vuetify.icons.contacts,
             title: 'Form',
             subTitle: 'powered by google forms',
-            openIcon: 'open_in_new',
+            openIcon: vue.prototype.$vuetify.icons.open_in_new,
             openAction: ['form'],
           },
         ],

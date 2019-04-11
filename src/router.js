@@ -1,9 +1,9 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from './views/Home.vue';
 
-const AsyncProductions = () => import(/* webpackChunkName: 'production',webpackPreload: true */ './views/Productions.vue');
-const AsyncHistories = () => import(/* webpackChunkName: 'history',webpackPreload: true */ './views/Histories.vue');
+const Home = () => import(/* webpackChunkName: 'home',webpackPreload: true */ './views/Home.vue');
+const Productions = () => import(/* webpackChunkName: 'production',webpackPreload: true */ './views/Productions.vue');
+const Histories = () => import(/* webpackChunkName: 'history',webpackPreload: true */ './views/Histories.vue');
 
 export default new Router({
   routes: [
@@ -15,12 +15,12 @@ export default new Router({
     {
       path: '/productions',
       name: 'productions',
-      component: AsyncProductions,
+      component: Productions,
     },
     {
       path: '/histories',
       name: 'histories',
-      component: AsyncHistories,
+      component: Histories,
     },
   ],
   scrollBehavior(to, from, savedPosition) {

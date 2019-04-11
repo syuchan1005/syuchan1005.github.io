@@ -2,7 +2,7 @@ export default {
   ja: {
     name: '日本語',
     app: {
-      reloadAlert: '新しいアップデートがあります! リロードして更新して下さい.',
+      reloadAlert: '新しいアップデートがあります!\nリロードして更新して下さい.',
       reload: 'リロード',
     },
     home: {
@@ -33,7 +33,7 @@ export default {
   en: {
     name: 'English',
     app: {
-      reloadAlert: 'Coming new Update! Please reload.',
+      reloadAlert: 'Coming new Update!\nPlease reload.',
       reload: 'Reload',
     },
     home: {

@@ -11,7 +11,7 @@
       <v-menu bottom left :close-on-content-click="false">
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on" aria-label="settings">
-            <v-icon>settings</v-icon>
+            <v-icon>{{ $vuetify.icons.settings }}</v-icon>
           </v-btn>
         </template>
         <v-list>
@@ -30,7 +30,7 @@
               <v-menu>
                 <template v-slot:activator="{ on: onLang }">
                   <v-btn icon v-on="onLang">
-                    <v-icon>keyboard_arrow_right</v-icon>
+                    <v-icon>{{$vuetify.icons.next}}</v-icon>
                   </v-btn>
                 </template>
                 <v-list>
@@ -80,19 +80,19 @@ export default {
         {
           path: '/productions',
           text: 'Productions',
-          icon: 'dns',
+          icon: this.$vuetify.icons.list,
           color: 'orange',
         },
         {
           path: '/',
           text: 'Home',
-          icon: 'home',
+          icon: this.$vuetify.icons.home,
           color: 'blue',
         },
         {
           path: '/histories',
           text: 'History',
-          icon: 'timeline',
+          icon: this.$vuetify.icons.timeline,
           color: 'green',
         },
       ],

@@ -27,7 +27,9 @@
             <v-spacer></v-spacer>
             <v-btn flat @click="$set(item, 'show', !item.show)" v-if="item.more">
               more
-              <v-icon>{{ item.show ? 'keyboard_arrow_down' : 'keyboard_arrow_up' }}</v-icon>
+              <v-icon right :style="{ transform: item.show ? 'rotate(-180deg)' : '' }">
+                {{$vuetify.icons.expand}}
+              </v-icon>
             </v-btn>
           </v-card-actions>
 

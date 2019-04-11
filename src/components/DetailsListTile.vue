@@ -31,18 +31,18 @@
       <v-tooltip v-if="item.openTip" top>
         <v-btn icon slot="activator" :href="item.openLink" rel="noopener" :aria-label="item.title"
                :target="item.openTarget === null ? null : item.openTarget || '_blank'">
-          <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
+          <v-icon>{{ item.openIcon || $vuetify.icons.next }}</v-icon>
         </v-btn>
         <span>{{ item.openTip }}</span>
       </v-tooltip>
       <v-btn v-else-if="item.openAction" @click="$emit('clickAction', item.openAction)"
-             icon aria-label="open contact form">
-        <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
+             icon :aria-label="item.title">
+        <v-icon>{{ item.openIcon || $vuetify.icons.next }}</v-icon>
       </v-btn>
       <v-btn icon v-else :href="item.openLink"
              rel="noopener" :aria-label="item.title"
              :target="item.openTarget === null ? null : item.openTarget || '_blank'">
-        <v-icon>{{ item.openIcon || 'arrow_forward' }}</v-icon>
+        <v-icon>{{ item.openIcon || $vuetify.icons.next }}</v-icon>
       </v-btn>
     </v-list-tile-action>
   </v-list-tile>
