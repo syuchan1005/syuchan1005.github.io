@@ -1,19 +1,19 @@
 self.__precacheManifest = [
   {
-    "revision": "c7fb0f0589d4baaa429c",
-    "url": "/css/app.c1d6436f.css"
+    "revision": "6c62530e7d5cb0f9c988",
+    "url": "/css/app.36a475d7.css"
   },
   {
-    "revision": "c7fb0f0589d4baaa429c",
-    "url": "/js/app.b44c736d.js"
+    "revision": "6c62530e7d5cb0f9c988",
+    "url": "/js/app.470c306c.js"
   },
   {
-    "revision": "da7ca49ddae2c9cff9c8",
-    "url": "/css/chunk-vendors.f6b8e020.css"
+    "revision": "7bcfec6a3baaed7560cb",
+    "url": "/css/chunk-vendors.50ad807e.css"
   },
   {
-    "revision": "da7ca49ddae2c9cff9c8",
-    "url": "/js/chunk-vendors.43016dfb.js"
+    "revision": "7bcfec6a3baaed7560cb",
+    "url": "/js/chunk-vendors.8e44149a.js"
   },
   {
     "revision": "a8210047c736a64b9648",
@@ -24,12 +24,20 @@ self.__precacheManifest = [
     "url": "/js/history.406a90ec.js"
   },
   {
-    "revision": "bdf2ef07d3c3ae52f02a",
-    "url": "/css/production.2952fcf9.css"
+    "revision": "343cda479fa2bf2e4d04",
+    "url": "/css/home.3baaa168.css"
   },
   {
-    "revision": "bdf2ef07d3c3ae52f02a",
-    "url": "/js/production.7e0ada20.js"
+    "revision": "343cda479fa2bf2e4d04",
+    "url": "/js/home.4c8b0c32.js"
+  },
+  {
+    "revision": "4124716e6395b5cc4ab4",
+    "url": "/css/production.afbbddce.css"
+  },
+  {
+    "revision": "4124716e6395b5cc4ab4",
+    "url": "/js/production.8fe2fef2.js"
   },
   {
     "revision": "e6257a726a0cf6ec8c6fec22821c055f",
@@ -92,23 +100,7 @@ self.__precacheManifest = [
     "url": "/img/fa-solid-900.49279363.svg"
   },
   {
-    "revision": "bca3a1873ac988faff0817eca96b2d86",
-    "url": "/fonts/MaterialIcons-Regular.bca3a187.woff2"
-  },
-  {
-    "revision": "b661c28b0f28606a96722ad2d9588b70",
-    "url": "/fonts/MaterialIcons-Regular.b661c28b.eot"
-  },
-  {
-    "revision": "9219a80f0478e0bfdee5f4c753ce8535",
-    "url": "/fonts/MaterialIcons-Regular.9219a80f.woff"
-  },
-  {
-    "revision": "586090b38a233ce0201fb221eb117a36",
-    "url": "/fonts/MaterialIcons-Regular.586090b3.ttf"
-  },
-  {
-    "revision": "7f4f0c85f05cf3e47aaced9d9cc56181",
+    "revision": "237a0451e78afeda183523d4d9e9806c",
     "url": "/index.html"
   },
   {
@@ -124,20 +116,8 @@ self.__precacheManifest = [
     "url": "/icon.png"
   },
   {
-    "revision": "faab6552badd400b92a576a1ef5ee6cd",
-    "url": "/icons/16.png"
-  },
-  {
     "revision": "a0dbdd6be5c93b321b47134ebc7ed9ac",
     "url": "/icons/128.png"
-  },
-  {
-    "revision": "8af2bb086e10f88981f48c2b3dcc248e",
-    "url": "/icons/192.png"
-  },
-  {
-    "revision": "73b74cda34eafa576f84d9613e4dac0b",
-    "url": "/icons/195.png"
   },
   {
     "revision": "5088662e6dec28f598f35bbcf4fd55ea",
@@ -148,12 +128,20 @@ self.__precacheManifest = [
     "url": "/icons/152.png"
   },
   {
+    "revision": "faab6552badd400b92a576a1ef5ee6cd",
+    "url": "/icons/16.png"
+  },
+  {
     "revision": "cd844cbff4dbda31332e471b7a335fa4",
     "url": "/icons/180.png"
   },
   {
-    "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
-    "url": "/icons/196.png"
+    "revision": "73b74cda34eafa576f84d9613e4dac0b",
+    "url": "/icons/195.png"
+  },
+  {
+    "revision": "8af2bb086e10f88981f48c2b3dcc248e",
+    "url": "/icons/192.png"
   },
   {
     "revision": "23b5b2a332d5cf79046c22f31317999f",
@@ -164,20 +152,20 @@ self.__precacheManifest = [
     "url": "/icons/24.png"
   },
   {
-    "revision": "52bfab1c3d8c69ed65a431d9363bac00",
-    "url": "/icons/270.png"
+    "revision": "c6025c0ceb92cdf0f6c8532c2a534599",
+    "url": "/icons/196.png"
   },
   {
-    "revision": "34d381607f838ea06260801c0cc282c2",
-    "url": "/icons/48.png"
+    "revision": "52bfab1c3d8c69ed65a431d9363bac00",
+    "url": "/icons/270.png"
   },
   {
     "revision": "620d2bb2cdb66f3f8f9a67a2fa8e509e",
     "url": "/icons/32.png"
   },
   {
-    "revision": "65b5e8da454ffb761087b3387d448499",
-    "url": "/icons/64.png"
+    "revision": "34d381607f838ea06260801c0cc282c2",
+    "url": "/icons/48.png"
   },
   {
     "revision": "bddbe5b840ad6c2c85e83bf227a3de01",
@@ -188,19 +176,23 @@ self.__precacheManifest = [
     "url": "/icons/57.png"
   },
   {
-    "revision": "2233a5f5e1dc2cd3cb62a739d3ff321e",
-    "url": "/icons/96.png"
-  },
-  {
     "revision": "e456f6f67a10b7bba868cb73a19a187f",
     "url": "/icons/76.png"
   },
   {
-    "revision": "4cacbe39c7c983cc8d51eed1b6630fb0",
-    "url": "/safari-pinned-tab.svg"
+    "revision": "65b5e8da454ffb761087b3387d448499",
+    "url": "/icons/64.png"
+  },
+  {
+    "revision": "2233a5f5e1dc2cd3cb62a739d3ff321e",
+    "url": "/icons/96.png"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
     "url": "/robots.txt"
+  },
+  {
+    "revision": "4cacbe39c7c983cc8d51eed1b6630fb0",
+    "url": "/safari-pinned-tab.svg"
   }
 ];
