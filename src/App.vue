@@ -51,7 +51,7 @@
     </v-content>
 
     <v-bottom-nav app class="app-footer" fixed
-                  :value="true" :active.sync="bottomNav" v-if="appMounted">
+                  :value="true" :active.sync="bottomNav">
       <v-btn v-for="item in navItems" :key="item.path"
              :color="item.color" :value="item.path" flat>
         <span>{{ item.text }}</span>
@@ -69,7 +69,6 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
 import { applyDarkMode } from '@/store';
 
 export default {
@@ -100,7 +99,6 @@ export default {
     };
   },
   computed: {
-    ...mapState(['appMounted']),
     bottomNav: {
       get() {
         return this.$route.path;
@@ -126,9 +124,6 @@ export default {
         this.showReloadAlert = available;
       });
     }
-    this.$nextTick(() => {
-      this.$store.commit('appMounted', true);
-    });
   },
   methods: {
     locationReload: val => window.location.reload(val),

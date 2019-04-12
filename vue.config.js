@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   outputDir: 'docs',
   productionSourceMap: false,
@@ -27,10 +29,22 @@ module.exports = {
           ...args[0],
           {
             toType: 'file',
-            from: args[0][0].from.replace('public', 'src\\backgroundPainter.min.js'),
-            to: `${args[0][0].to}\\js\\backgroundPainter.js`,
+            from: path.join(args[0][0].from, '../src/backgroundPainter.min.js'),
+            to: path.join(args[0][0].to, 'js/backgroundPainter.js'),
           },
         ],
+      ]);
+    config.plugin('preload')
+      .tap(args => [
+        {
+          ...args[0],
+          include: 'allAssets',
+          fileBlacklist: [
+            ...args[0].fileBlacklist,
+            /fonts\/(.*?)\.(woff|eot|ttf)$/,
+            /fa-(.*?)\.svg$/,
+          ],
+        },
       ]);
   },
 };
