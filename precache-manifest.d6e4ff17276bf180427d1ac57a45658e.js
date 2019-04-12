@@ -8,7 +8,7 @@ self.__precacheManifest = [
     "url": "/safari-pinned-tab.svg"
   },
   {
-    "revision": "7717004ceccfe7f5480600e488b6b5e0",
+    "revision": "08950fd8ce36861df5b7dace39c8ed45",
     "url": "/index.html"
   },
   {
@@ -96,8 +96,8 @@ self.__precacheManifest = [
     "url": "/img/fa-brands-400.5bf14553.svg"
   },
   {
-    "revision": "00fb14b882a4a555d2dd",
-    "url": "/js/app.39dd92a0.js"
+    "revision": "57cccb1a587314350f80",
+    "url": "/js/app.8a4b750d.js"
   },
   {
     "revision": "1fd1775cf6a1ca8ad825",
@@ -192,7 +192,7 @@ self.__precacheManifest = [
     "url": "/robots.txt"
   },
   {
-    "revision": "00fb14b882a4a555d2dd",
-    "url": "/css/app.27e42ae1.css"
+    "revision": "57cccb1a587314350f80",
+    "url": "/css/app.9042a965.css"
   }
 ];
