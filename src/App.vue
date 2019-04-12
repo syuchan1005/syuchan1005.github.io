@@ -6,7 +6,7 @@
         syuchan1005<span style="text-transform:none">'s</span> Portfolio
       </v-toolbar-title>
 
-      <v-spacer />
+      <v-spacer/>
 
       <v-menu bottom left :close-on-content-click="false">
         <template v-slot:activator="{ on }">
@@ -17,11 +17,11 @@
         <v-list>
           <v-list-tile>
             <v-list-tile-action>
-              <v-switch v-model="darkMode" />
+              <v-switch v-model="darkMode"/>
             </v-list-tile-action>
             <v-list-tile-title>DarkMode</v-list-tile-title>
           </v-list-tile>
-          <v-divider />
+          <v-divider/>
           <v-list-tile>
             <v-list-tile-content>
               <v-list-tile-title>Language</v-list-tile-title>
@@ -35,7 +35,7 @@
                 </template>
                 <v-list>
                   <v-list-tile v-for="l in $i18n.availableLocales" :key="l"
-                    @click="$i18n.locale = l">
+                               @click="$i18n.locale = l">
                     {{$t('name', l)}}
                   </v-list-tile>
                 </v-list>
@@ -53,7 +53,7 @@
     <v-bottom-nav app class="app-footer" fixed
                   :value="true" :active.sync="bottomNav">
       <v-btn v-for="item in navItems" :key="item.path"
-             :color="item.color" :value="item.path" flat>
+             :color="item.color" :value="item.path" flat class="app-footer-button">
         <span>{{ item.text }}</span>
         <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
@@ -142,6 +142,11 @@ export default {
   .v-list__group__items--no-action .v-list__tile {
     padding-left: 32px;
   }
+
+  .app-footer-button .v-btn__content {
+    margin-bottom: constant(safe-area-inset-bottom);
+    margin-bottom: env(safe-area-inset-bottom);
+  }
 </style>
 
 <!--suppress CssOverwrittenProperties, CssInvalidFunction -->
@@ -175,8 +180,7 @@ export default {
   }
 
   .app-footer {
-    height: auto !important;
-    padding-bottom: constant(safe-area-inset-bottom) !important;
-    padding-bottom: env(safe-area-inset-bottom) !important;
+    height: calc(56px + constant(safe-area-inset-bottom)) !important;
+    height: calc(56px + env(safe-area-inset-bottom)) !important;
   }
 </style>
