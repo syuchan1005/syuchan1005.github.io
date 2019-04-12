@@ -15,7 +15,7 @@
     <v-dialog v-model="showContact" persistent :width="contact.width"
               :fullscreen="$vuetify.breakpoint.width < contact.width">
       <v-card>
-        <v-toolbar dark color="green lighten-1">
+        <v-toolbar dark color="green lighten-1" class="app-header">
           <v-btn icon @click="showContact = false">
             <v-icon>{{$vuetify.icons.close}}</v-icon>
           </v-btn>

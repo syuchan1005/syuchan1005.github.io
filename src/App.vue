@@ -131,7 +131,8 @@ export default {
 };
 </script>
 
-<style>
+<!--suppress CssOverwrittenProperties, CssInvalidFunction -->
+<style lang="scss">
   html, body {
     width: 100%;
     height: 100%;
@@ -147,10 +148,7 @@ export default {
     margin-bottom: constant(safe-area-inset-bottom);
     margin-bottom: env(safe-area-inset-bottom);
   }
-</style>
 
-<!--suppress CssOverwrittenProperties, CssInvalidFunction -->
-<style lang="scss" scoped>
   .app-header {
     padding-top: constant(safe-area-inset-top) !important;
     padding-top: env(safe-area-inset-top) !important;
