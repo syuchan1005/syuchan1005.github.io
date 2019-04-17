@@ -69,7 +69,7 @@
 </template>
 
 <script>
-import { applyDarkMode } from '@/store';
+import { applyDarkMode } from './store';
 
 export default {
   name: 'App',
