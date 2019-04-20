@@ -8,7 +8,8 @@ const Histories = () => import(/* webpackChunkName: 'history',webpackPreload: tr
 export default new Router({
   routes: [
     {
-      path: '/',
+      path: '/home',
+      alias: '/',
       name: 'home',
       component: Home,
     },

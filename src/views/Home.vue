@@ -96,6 +96,7 @@ export default {
       if (type === 'form') {
         this.showContact = true;
         this.contact.disabled = false;
+        this.$ga.page('/home/contact_form');
       }
     },
     submitForm() {
