@@ -83,7 +83,7 @@ export default {
           color: 'orange',
         },
         {
-          path: '/',
+          path: '/home',
           text: 'Home',
           icon: this.$vuetify.icons.home,
           color: 'blue',
