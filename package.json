@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "node mv docs/.git docs.git && vue-cli-service build --report && node mv docs.git docs/.git",
     "lint": "vue-cli-service lint",
-    "serve:docs": "serve ./docs"
+    "serve:docs": "serve ./docs",
+    "test:e2e": "vue-cli-service test:e2e --headless",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.8.1",
@@ -22,10 +24,13 @@
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.6.0",
+    "@vue/cli-plugin-e2e-cypress": "^3.6.0",
     "@vue/cli-plugin-eslint": "^3.6.0",
     "@vue/cli-plugin-pwa": "^3.6.0",
     "@vue/cli-service": "^3.6.0",
     "@vue/eslint-config-airbnb": "^4.0.0",
+    "@vue/test-utils": "1.0.0-beta.29",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.2.2",
