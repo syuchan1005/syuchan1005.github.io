@@ -22,15 +22,14 @@ action "E2E Test" {
 
 action "Build" {
   uses = "actions/npm@master"
-  needs = ["Install"]
+  needs = ["E2E Test"]
   args = ["run", "build"]
 }
 
 action "Deploy" {
   uses = "./action-git"
   needs = [
-    "Build",
-    "E2E Test",
+    "Build"
   ]
   args = "cd docs && git add -A && git commit -m \"$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].message')\" && git push https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
   secrets = ["ACCESS_TOKEN"]
