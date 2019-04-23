@@ -17,7 +17,7 @@ action "Install" {
 action "E2E Test" {
   uses = "docker://cypress/base:10"
   needs = ["Install"]
-  args = ["run", "test:e2e"]
+  args = ["npm", "run", "test:e2e"]
 }
 
 action "Build" {
