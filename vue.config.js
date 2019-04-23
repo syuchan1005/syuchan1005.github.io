@@ -1,7 +1,9 @@
 const path = require('path');
 
+const outputDir = 'docs';
+
 module.exports = {
-  outputDir: 'docs',
+  outputDir,
   productionSourceMap: false,
   pwa: {
     workboxPluginMode: 'InjectManifest',
@@ -29,8 +31,15 @@ module.exports = {
           ...args[0],
           {
             toType: 'file',
-            from: path.join(args[0][0].from, '../src/backgroundPainter.min.js'),
-            to: path.join(args[0][0].to, 'js/backgroundPainter.js'),
+            from: path.join(__dirname, 'src/backgroundPainter.min.js'),
+            to: path.join(__dirname, outputDir, 'js/backgroundPainter.js'),
+          },
+          {
+            toType: 'dir',
+            flatten: true,
+            ignore: ['.gitkeep'],
+            from: path.join(__dirname, /* cypress.screenshotsFolder */ 'screenshots'),
+            to: path.join(__dirname, outputDir, 'screenshots'),
           },
         ],
       ]);

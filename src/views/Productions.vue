@@ -4,7 +4,7 @@
       <div :key="k" class="display-1">{{ k }}</div>
       <div :key="`${k}-${items[k].length}`" class="cards">
         <v-card v-for="item in items[k]" :key="`${k}-${item.title}`">
-          <v-img v-if="item.src" :src="item.src" aspect-ratio="1.7778" />
+          <v-img v-if="item.src" :src="item.src" aspect-ratio="1.7778"/>
 
           <v-card-title v-if="item.src">
             <div class="headline" :class="textColor(item.color)">{{ item.title }}</div>
@@ -25,16 +25,18 @@
               Repository
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn flat @click="$set(item, 'show', !item.show)" v-if="item.more">
+            <v-btn flat @click="toggleMore(`${k}-${item.title}`)" v-if="item.more">
               more
-              <v-icon right :style="{ transform: item.show ? 'rotate(-180deg)' : '' }">
+              <v-icon right :style="{
+              transform: openMore.includes(`${k}-${item.title}`) ? 'rotate(-180deg)' : ''
+            }">
                 {{$vuetify.icons.expand}}
               </v-icon>
             </v-btn>
           </v-card-actions>
 
           <v-slide-y-transition v-if="item.more">
-            <v-list v-show="item.show">
+            <v-list v-show="openMore.includes(`${k}-${item.title}`)">
               <template v-for="m in item.more">
                 <v-list-tile v-if="Array.isArray(m)" :key="`${m[0]} ${m[1]}`">
                   <v-list-tile-content>
@@ -65,6 +67,7 @@ export default {
   data() {
     return {
       seed: Date.now(),
+      openMore: [],
     };
   },
   computed: {
@@ -75,6 +78,14 @@ export default {
     textColor(color) {
       const c = color.split(' ');
       return [`${c[0]}--text`, `text--${c[1]}`];
+    },
+    toggleMore(key) {
+      const i = this.openMore.indexOf(key);
+      if (i === -1) {
+        this.openMore.push(key);
+      } else {
+        this.openMore.splice(i, 1);
+      }
     },
   },
 };
