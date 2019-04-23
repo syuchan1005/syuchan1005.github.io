@@ -9,15 +9,21 @@ action "Add git worktree" {
 }
 
 action "Install" {
-  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  uses = "actions/npm@master"
   needs = ["Add git worktree"]
-  args = "ci"
+  args = ["ci"]
+}
+
+action "E2E Test" {
+  uses = "actions/npm@master"
+  needs = ["Install"]
+  runs = ["run", "test:e2e"]
 }
 
 action "Build" {
-  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
+  uses = "actions/npm@master"
   needs = ["E2E Test"]
-  args = "run build"
+  args = ["run", "build"]
 }
 
 action "Deploy" {
@@ -27,10 +33,4 @@ action "Deploy" {
   ]
   args = "cd docs && git add -A && git commit -m \"$(cat ${GITHUB_EVENT_PATH} | jq -r '.commits[0].message')\" && git push https://${ACCESS_TOKEN}@github.com/${GITHUB_REPOSITORY}.git master"
   secrets = ["ACCESS_TOKEN"]
-}
-
-action "E2E Test" {
-  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
-  needs = ["Install"]
-  runs = "run test:e2e"
 }
