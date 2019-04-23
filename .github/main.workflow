@@ -30,7 +30,7 @@ action "Deploy" {
 }
 
 action "E2E Test" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
+  uses = "actions/npm@3c8332795d5443adc712d30fa147db61fd520b5a"
   needs = ["Install"]
   runs = "run test:e2e"
 }
