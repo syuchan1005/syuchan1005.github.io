@@ -10,5 +10,7 @@ Vue.use(Vuetify, {
     list: 'fas fa-list',
     timeline: 'fas fa-chart-line',
     settings: 'fas fa-cog',
+    invert_colors: 'fas fa-tint',
+    language: 'fas fa-globe',
   },
 });

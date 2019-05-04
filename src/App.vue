@@ -1,5 +1,5 @@
 <template>
-  <v-app :dark="darkMode">
+  <v-app :dark="$store.state.darkMode">
     <v-toolbar app class="app-header" color="green lighten-1" fixed dark
                :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
       <v-toolbar-title class="headline text-uppercase">
@@ -16,31 +16,12 @@
         </template>
         <v-list>
           <v-list-tile>
-            <v-list-tile-action>
-              <v-switch v-model="darkMode"/>
-            </v-list-tile-action>
-            <v-list-tile-title>DarkMode</v-list-tile-title>
+            <v-select v-model="colorType" :items="colors"
+                      label="color" :prepend-icon="$vuetify.icons.invert_colors"/>
           </v-list-tile>
-          <v-divider/>
           <v-list-tile>
-            <v-list-tile-content>
-              <v-list-tile-title>Language</v-list-tile-title>
-            </v-list-tile-content>
-            <v-list-tile-action>
-              <v-menu>
-                <template v-slot:activator="{ on: onLang }">
-                  <v-btn icon v-on="onLang">
-                    <v-icon>{{$vuetify.icons.next}}</v-icon>
-                  </v-btn>
-                </template>
-                <v-list>
-                  <v-list-tile v-for="l in $i18n.availableLocales" :key="l"
-                               @click="$i18n.locale = l">
-                    {{$t('name', l)}}
-                  </v-list-tile>
-                </v-list>
-              </v-menu>
-            </v-list-tile-action>
+            <v-select v-model="$i18n.locale" :items="languages" item-text="name" item-value="locale"
+                      label="language" :prepend-icon="$vuetify.icons.language"/>
           </v-list-tile>
         </v-list>
       </v-menu>
@@ -69,7 +50,7 @@
 </template>
 
 <script>
-import { applyDarkMode } from './store';
+import { applyColorType, COLOR_TYPES } from './store';
 
 export default {
   name: 'App',
@@ -107,17 +88,30 @@ export default {
         this.$router.push(val);
       },
     },
-    darkMode: {
+    darkMode() {
+      return this.$store.state.darkMode;
+    },
+    colorType: {
       get() {
-        return this.$store.state.darkMode;
+        return this.$store.state.colorType;
       },
       set(val) {
-        this.$store.commit('darkMode', val);
+        this.$store.commit('colorType', val);
       },
+    },
+    colors() {
+      return COLOR_TYPES;
+    },
+    languages() {
+      return this.$i18n.availableLocales
+        .map(locale => ({
+          locale,
+          name: this.$t('name', locale),
+        }));
     },
   },
   mounted() {
-    applyDarkMode();
+    applyColorType();
 
     if (window.isUpdateAvailable) {
       window.isUpdateAvailable.then((available) => {
