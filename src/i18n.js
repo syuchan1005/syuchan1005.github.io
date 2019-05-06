@@ -29,6 +29,18 @@ export default {
       success: '送信しました。',
       failure: '送信に失敗しました。',
     },
+    histories: {
+      type: {
+        intern: 'インターン',
+        casual_job: '短期アルバイト',
+      },
+      jobType: '形態',
+      period: '期間',
+      languages: '言語',
+      frameworks: 'フレームワーク',
+      other: 'その他',
+      content: '内容',
+    },
   },
   en: {
     name: 'English',
@@ -59,6 +71,18 @@ export default {
       message: 'Message',
       success: 'Message sent successfully',
       failure: 'Message sent failure',
+    },
+    histories: {
+      type: {
+        intern: 'Intern',
+        casual_job: 'Casual job',
+      },
+      jobType: 'Type',
+      period: 'Period',
+      languages: 'Languages',
+      frameworks: 'Frameworks',
+      other: 'Other',
+      content: 'Contents',
     },
   },
 };

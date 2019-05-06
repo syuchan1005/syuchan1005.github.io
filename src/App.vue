@@ -8,27 +8,32 @@
 
       <v-spacer/>
 
-      <v-menu bottom left :close-on-content-click="false">
+      <v-menu bottom left :close-on-content-click="false" offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on" aria-label="settings">
             <v-icon>{{ $vuetify.icons.settings }}</v-icon>
           </v-btn>
         </template>
-        <v-list>
-          <v-list-tile>
-            <v-select v-model="colorType" :items="colors"
-                      label="color" :prepend-icon="$vuetify.icons.invert_colors"/>
-          </v-list-tile>
-          <v-list-tile>
-            <v-select v-model="$i18n.locale" :items="languages" item-text="name" item-value="locale"
-                      label="language" :prepend-icon="$vuetify.icons.language"/>
-          </v-list-tile>
-        </v-list>
+        <v-card>
+          <v-list>
+            <v-list-tile>
+              <v-select v-model="colorType" :items="colors"
+                        label="color" :prepend-icon="$vuetify.icons.invert_colors" />
+            </v-list-tile>
+            <v-list-tile>
+              <v-select v-model="$i18n.locale" hide-details
+                        :items="languages" item-text="name" item-value="locale"
+                        label="language" :prepend-icon="$vuetify.icons.language" />
+            </v-list-tile>
+          </v-list>
+        </v-card>
       </v-menu>
     </v-toolbar>
 
     <v-content class="app-content" :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
-      <router-view/>
+      <keep-alive>
+        <router-view/>
+      </keep-alive>
     </v-content>
 
     <v-bottom-nav app class="app-footer" fixed

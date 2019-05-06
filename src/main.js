@@ -31,6 +31,7 @@ Vue.use(VueAnalytics, {
 new Vue({
   i18n: new VueI18n({
     locale: 'ja',
+    fallbackLocale: 'en',
     messages,
   }),
   router,
