@@ -28,5 +28,5 @@ jobs:
       run: |
         cd docs
         git add -A
-        git commit -m \"cat ${{ github.event_name }} ${{ github.sha }}\"
+        git commit -m "${{ github.event_name }} ${{ github.sha }}"
         git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}.git master
