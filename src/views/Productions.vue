@@ -17,20 +17,25 @@
             </div>
           </v-card-title>
 
-          <v-card-text v-if="!item.src" style="white-space: pre-wrap;">{{ item.body }}</v-card-text>
+          <v-card-text
+            v-if="!item.src"
+            style="white-space: pre-wrap;padding-top:16px"
+          >
+            {{ item.body }}
+          </v-card-text>
 
           <v-card-actions>
-            <v-btn v-if="item.link" outline :href="item.link" :aria-label="item.title"
+            <v-btn v-if="item.link" outlined :href="item.link" :aria-label="item.title"
                    target="_blank" rel="noopener" style="margin:0" :color="item.color">
               Repository
             </v-btn>
             <v-spacer></v-spacer>
-            <v-btn flat @click="toggleMore(`${k}-${item.title}`)" v-if="item.more">
+            <v-btn text @click="toggleMore(`${k}-${item.title}`)" v-if="item.more">
               more
               <v-icon right :style="{
               transform: openMore.includes(`${k}-${item.title}`) ? 'rotate(-180deg)' : ''
             }">
-                {{$vuetify.icons.expand}}
+                {{$vuetify.icons.values.expand}}
               </v-icon>
             </v-btn>
           </v-card-actions>
@@ -38,17 +43,17 @@
           <v-slide-y-transition v-if="item.more">
             <v-list v-show="openMore.includes(`${k}-${item.title}`)">
               <template v-for="m in item.more">
-                <v-list-tile v-if="Array.isArray(m)" :key="`${m[0]} ${m[1]}`">
-                  <v-list-tile-content>
-                    <v-list-tile-sub-title>{{ m[0] }}</v-list-tile-sub-title>
-                    <v-list-tile-title>{{ m.slice(1).join(', ') }}</v-list-tile-title>
-                  </v-list-tile-content>
-                </v-list-tile>
-                <v-list-tile v-else :key="m">
-                  <v-list-tile-content>
+                <v-list-item v-if="Array.isArray(m)" :key="`${m[0]} ${m[1]}`">
+                  <v-list-item-content>
+                    <v-list-item-subtitle>{{ m[0] }}</v-list-item-subtitle>
+                    <v-list-item-title>{{ m.slice(1).join(', ') }}</v-list-item-title>
+                  </v-list-item-content>
+                </v-list-item>
+                <v-list-item v-else :key="m">
+                  <v-list-item-content>
                     {{ m }}
-                  </v-list-tile-content>
-                </v-list-tile>
+                  </v-list-item-content>
+                </v-list-item>
               </template>
             </v-list>
           </v-slide-y-transition>

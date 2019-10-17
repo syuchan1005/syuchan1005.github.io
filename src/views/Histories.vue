@@ -11,25 +11,25 @@
           </v-card-title>
 
           <v-list>
-            <v-list-tile>
-              <v-list-tile-content>
-                <v-list-tile-sub-title>{{$t('histories.jobType')}}</v-list-tile-sub-title>
-                <v-list-tile-title>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-subtitle>{{$t('histories.jobType')}}</v-list-item-subtitle>
+                <v-list-item-title>
                   {{$t(`histories.type.${itemTypes[item.type][0]}`)}}
-                </v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
-            <v-list-tile v-for="(i, li) in item.body" :key="li">
-              <v-list-tile-content>
-                <v-list-tile-sub-title>{{$t(`histories.${i[0]}`)}}</v-list-tile-sub-title>
-                <v-list-tile-title>{{i[1]}}</v-list-tile-title>
-              </v-list-tile-content>
-            </v-list-tile>
+                </v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+            <v-list-item v-for="(i, li) in item.body" :key="li">
+              <v-list-item-content>
+                <v-list-item-subtitle>{{$t(`histories.${i[0]}`)}}</v-list-item-subtitle>
+                <v-list-item-title>{{i[1]}}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
           </v-list>
 
           <v-card-actions>
             <v-spacer />
-            <v-btn v-for="(a, ai) in item.actions" :key="ai" outline :href="a[1]">
+            <v-btn v-for="(a, ai) in item.actions" :key="ai" outlined :href="a[1]">
               {{a[0]}}
             </v-btn>
           </v-card-actions>

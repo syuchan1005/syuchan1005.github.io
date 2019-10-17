@@ -20,12 +20,12 @@
       <v-card>
         <v-toolbar dark color="green lighten-1" class="app-header">
           <v-btn icon @click="showContact = false">
-            <v-icon>{{$vuetify.icons.close}}</v-icon>
+            <v-icon>{{$vuetify.icons.values.close}}</v-icon>
           </v-btn>
           <v-toolbar-title>Contact</v-toolbar-title>
           <v-spacer />
           <v-btn icon @click="submitForm">
-            <v-icon>{{$vuetify.icons.send}}</v-icon>
+            <v-icon>{{$vuetify.icons.values.send}}</v-icon>
           </v-btn>
         </v-toolbar>
         <v-card-text>
@@ -48,7 +48,7 @@
     <v-snackbar v-model="contact.alert.show" bottom
                 :color="contact.alert.success ? 'success' : 'error'">
       {{$t('contact.' + (contact.alert.success ? 'success' : 'failure'))}}
-      <v-btn dark flat @click="contact.alert.show = false">
+      <v-btn dark text @click="contact.alert.show = false">
         Close
       </v-btn>
     </v-snackbar>

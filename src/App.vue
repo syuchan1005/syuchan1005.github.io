@@ -1,6 +1,6 @@
 <template>
-  <v-app :dark="$store.state.darkMode">
-    <v-toolbar app class="app-header" color="green lighten-1" fixed dark
+  <v-app>
+    <v-app-bar app class="app-header" color="green lighten-1" fixed dark
                :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
       <v-toolbar-title class="headline text-uppercase">
         syuchan1005<span style="text-transform:none">'s</span> Portfolio
@@ -11,24 +11,24 @@
       <v-menu bottom left :close-on-content-click="false" offset-y>
         <template v-slot:activator="{ on }">
           <v-btn icon v-on="on" aria-label="settings">
-            <v-icon>{{ $vuetify.icons.settings }}</v-icon>
+            <v-icon>{{ $vuetify.icons.values.settings }}</v-icon>
           </v-btn>
         </template>
         <v-card>
           <v-list>
-            <v-list-tile>
+            <v-list-item>
               <v-select v-model="colorType" :items="colors"
-                        label="color" :prepend-icon="$vuetify.icons.invert_colors" />
-            </v-list-tile>
-            <v-list-tile>
+                        label="color" :prepend-icon="$vuetify.icons.values.invert_colors" />
+            </v-list-item>
+            <v-list-item>
               <v-select v-model="$i18n.locale" hide-details
                         :items="languages" item-text="name" item-value="locale"
-                        label="language" :prepend-icon="$vuetify.icons.language" />
-            </v-list-tile>
+                        label="language" :prepend-icon="$vuetify.icons.values.language" />
+            </v-list-item>
           </v-list>
         </v-card>
       </v-menu>
-    </v-toolbar>
+    </v-app-bar>
 
     <v-content class="app-content" :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
       <keep-alive>
@@ -36,18 +36,17 @@
       </keep-alive>
     </v-content>
 
-    <v-bottom-nav app class="app-footer" fixed
-                  :value="true" :active.sync="bottomNav">
+    <v-bottom-navigation app class="app-footer" fixed v-model="bottomNav">
       <v-btn v-for="item in navItems" :key="item.path"
-             :color="item.color" :value="item.path" flat class="app-footer-button">
+             :color="item.color" :value="item.path" text class="app-footer-button">
         <span>{{ item.text }}</span>
         <v-icon>{{ item.icon }}</v-icon>
       </v-btn>
-    </v-bottom-nav>
+    </v-bottom-navigation>
 
     <v-snackbar v-model="showReloadAlert" bottom :timeout="0" color="error">
       <div>{{ $t('app.reloadAlert') }}</div>
-      <v-btn outline @click="locationReload(true)">
+      <v-btn outlined @click="locationReload(true)">
         {{ $t('app.reload') }}
       </v-btn>
     </v-snackbar>
@@ -65,19 +64,19 @@ export default {
         {
           path: '/productions',
           text: 'Productions',
-          icon: this.$vuetify.icons.list,
+          icon: this.$vuetify.icons.values.list,
           color: 'orange',
         },
         {
           path: '/home',
           text: 'Home',
-          icon: this.$vuetify.icons.home,
+          icon: this.$vuetify.icons.values.home,
           color: 'blue',
         },
         {
           path: '/histories',
           text: 'History',
-          icon: this.$vuetify.icons.timeline,
+          icon: this.$vuetify.icons.values.timeline,
           color: 'green',
         },
       ],
@@ -113,6 +112,11 @@ export default {
           locale,
           name: this.$t('name', locale),
         }));
+    },
+  },
+  watch: {
+    darkMode(val) {
+      this.$vuetify.theme.dark = val;
     },
   },
   mounted() {

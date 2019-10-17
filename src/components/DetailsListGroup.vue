@@ -1,11 +1,11 @@
 <template>
   <v-list-group v-model="item.active" no-action :sub-group="subGroup"
                 :key="`${item.title} ${item.sideTitle} ${item.subTitle}`">
-    <v-list-tile slot="activator">
-      <v-list-tile-content>
-        <v-list-tile-title>{{ item.title }}</v-list-tile-title>
-      </v-list-tile-content>
-    </v-list-tile>
+    <v-list-item slot="activator">
+      <v-list-item-content>
+        <v-list-item-title>{{ item.title }}</v-list-item-title>
+      </v-list-item-content>
+    </v-list-item>
 
     <template v-for="subItem in item.items">
       <details-list-tile :item="subItem" v-if="lazy && !subItem.items"

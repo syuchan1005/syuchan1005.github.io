@@ -4,7 +4,7 @@ import Vue from 'vue';
 import VueI18n from 'vue-i18n';
 import VueAnalytics from 'vue-analytics';
 
-import './plugins/vuetify';
+import vuetify from './plugins/vuetify';
 import App from './App.vue';
 import router from './router';
 import './registerServiceWorker';
@@ -36,5 +36,6 @@ new Vue({
   }),
   router,
   store,
+  vuetify,
   render: h => h(App),
 }).$mount('#app');

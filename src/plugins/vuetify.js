@@ -1,16 +1,19 @@
 import Vue from 'vue';
 import Vuetify from 'vuetify/lib';
-import 'vuetify/src/stylus/app.styl';
 
-Vue.use(Vuetify, {
-  iconfont: 'fa',
+Vue.use(Vuetify);
+
+export default new Vuetify({
   icons: {
-    send: 'fas fa-paper-plane',
-    home: 'fas fa-home',
-    list: 'fas fa-list',
-    timeline: 'fas fa-chart-line',
-    settings: 'fas fa-cog',
-    invert_colors: 'fas fa-tint',
-    language: 'fas fa-globe',
+    iconfont: 'fa',
+    values: {
+      send: 'fas fa-paper-plane',
+      home: 'fas fa-home',
+      list: 'fas fa-list',
+      timeline: 'fas fa-chart-line',
+      settings: 'fas fa-cog',
+      invert_colors: 'fas fa-tint',
+      language: 'fas fa-globe',
+    },
   },
 });
