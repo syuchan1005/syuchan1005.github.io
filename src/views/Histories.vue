@@ -22,7 +22,7 @@
             <v-list-item v-for="(i, li) in item.body" :key="li">
               <v-list-item-content>
                 <v-list-item-subtitle>{{$t(`histories.${i[0]}`)}}</v-list-item-subtitle>
-                <v-list-item-title>{{i[1]}}</v-list-item-title>
+                <v-list-item-title style="white-space: pre-wrap;">{{i[1]}}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list>
@@ -48,6 +48,16 @@ export default {
       ['casual_job', 'orange'],
     ],
     items: () => [
+      {
+        title: ['LINE株式会社', 'LINE Corporation'],
+        type: 1,
+        body: [
+          ['period', '2019/08/05 to 2019/08/30'],
+          ['languages', 'Java, Kotlin'],
+          ['frameworks', 'Android'],
+          ['content', 'Androidアプリケーションの機能追加, 単体テスト, 結合テストの大規模追加'],
+        ],
+      },
       {
         title: ['LINE株式会社', 'LINE Corporation'],
         type: 1,
