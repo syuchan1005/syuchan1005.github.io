@@ -16,12 +16,12 @@ jobs:
     - uses: actions/setup-node@v1
     - name: Install
       run: npm ci
-    - name: E2E Test(Cypress)
-      uses: docker://cypress/base:10
-      with:
-        args: |
-          cypress install
-          npm run test:e2e
+    # - name: E2E Test(Cypress)
+    #   uses: docker://cypress/base:10
+    #   with:
+    #     args: |
+    #       cypress install
+    #       npm run test:e2e
     - name: Build
       run: npm run build
     - name: Deploy
