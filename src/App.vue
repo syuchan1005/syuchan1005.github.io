@@ -147,11 +147,6 @@ export default {
     padding-left: 32px;
   }
 
-  .app-footer-button .v-btn__content {
-    margin-bottom: constant(safe-area-inset-bottom);
-    margin-bottom: env(safe-area-inset-bottom);
-  }
-
   .app-header {
     padding-top: constant(safe-area-inset-top) !important;
     padding-top: env(safe-area-inset-top) !important;
@@ -183,5 +178,10 @@ export default {
   .app-footer {
     height: calc(56px + constant(safe-area-inset-bottom)) !important;
     height: calc(56px + env(safe-area-inset-bottom)) !important;
+  }
+
+  .app-footer-button .v-btn__content {
+    padding-bottom: constant(safe-area-inset-bottom);
+    padding-bottom: env(safe-area-inset-bottom);
   }
 </style>
