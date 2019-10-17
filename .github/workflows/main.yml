@@ -27,6 +27,8 @@ jobs:
     - name: Deploy
       run: |
         cd docs
+        git config --global user.email "${{ secrets.GIT_EMAIL }}"
+        git config --global user.name "${{ secrets.GIT_USERNAME }}"
         git add -A
         git commit -m "${{ github.event_name }} ${{ github.sha }}"
         git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}.git master
