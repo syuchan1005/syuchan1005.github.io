@@ -79,6 +79,34 @@ export default {
     items: () => ({
       2019: [
         {
+          color: 'green',
+          title: 'BookReader',
+          link: 'https://github.com/syuchan1005/BookReader',
+          body: '自分専用マンガビュワー',
+          more: [
+            [
+              'フロントエンド',
+              'React (hooks)',
+              'Material-UI',
+            ],
+            [
+              'バックエンド',
+              'Koa.js',
+              'GraphQL',
+            ],
+            [
+              '他',
+              'SQLite',
+            ],
+          ],
+        },
+        {
+          color: 'grey darken-1',
+          title: 'HomeControl',
+          link: 'https://github.com/syuchan1005/HomeControl',
+          body: '家の中の赤外線動作系家電(テレビ等)やREST API経由で操作できる家電を\nGoogle HomeやClova, Alexaに追加する',
+        },
+        {
           color: 'cyan darken-1',
           title: 'Reveal in ProjectView',
           link: 'https://github.com/syuchan1005/RevealInProjectView',
