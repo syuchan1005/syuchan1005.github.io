@@ -1,0 +1,30 @@
+name: build
+
+on:
+  push:
+    branches: 
+      - develop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Add git worktree
+      run: git worktree add docs master
+    - uses: actions/setup-node@v1
+    - name: Install
+      run: npm ci
+    - name: E2E Test(Cypress)
+      uses: docker://cypress/base:10
+      with:
+        args: npm run test:e2e
+    - name: Build
+      run: npm run build
+    - name: Deploy
+      run: |
+        cd docs
+        git add -A
+        git commit -m \"cat ${{ github.event_name }} ${{ github.sha }}\"
+        git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}.git master
