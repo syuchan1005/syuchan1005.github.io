@@ -19,7 +19,9 @@ jobs:
     - name: E2E Test(Cypress)
       uses: docker://cypress/base:10
       with:
-        args: npm run test:e2e
+        args: |
+          cypress install
+          npm run test:e2e
     - name: Build
       run: npm run build
     - name: Deploy
