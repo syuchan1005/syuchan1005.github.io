@@ -37,7 +37,7 @@
     </v-content>
 
     <v-bottom-navigation app grow class="app-footer" fixed v-model="bottomNav">
-      <v-btn v-for="item in navItems" :key="item.path"
+      <v-btn v-for="item in navItems" :key="item.path" text style="height: inherit"
              :color="item.color" :value="item.path" class="app-footer-button">
         <span>{{ item.text }}</span>
         <v-icon>{{ item.icon }}</v-icon>
