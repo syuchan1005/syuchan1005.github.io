@@ -7,15 +7,7 @@ importScripts("/precache-manifest.adde5767dfde7436daf37301663418bb.js", "https:/
 
 workbox.core.setCacheNameDetails({ prefix: 'syuchan1005.github.io' });
 
+workbox.core.skipWaiting(); workbox.core.clientsClaim();
 self.__precacheManifest = [].concat(self.__precacheManifest || []);
-workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
-
-self.addEventListener('install', (event) => {
-  event.waitUntil(self.skipWaiting());
-});
-
-self.addEventListener('activate', (event) => {
-  event.waitUntil(self.clients.claim());
-});
 
