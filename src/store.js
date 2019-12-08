@@ -36,7 +36,7 @@ const darkModeListener = (e) => {
 let darkModeMatches = [];
 
 export const applyColorType = () => {
-  darkModeMatches.forEach(m => m.removeListener(darkModeListener));
+  darkModeMatches.forEach((m) => m.removeListener(darkModeListener));
   darkModeMatches = [];
 
   /* eslint-disable no-use-before-define */

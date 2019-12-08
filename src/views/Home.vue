@@ -89,7 +89,7 @@ export default {
       if (preWidth % 8 !== 0) preWidth += (8 - (preWidth % 8));
       return preWidth;
     },
-    requiredRules: () => [v => !!v || 'required'],
+    requiredRules: () => [(v) => !!v || 'required'],
     items: () => [
       {
         title: 'Contacts',

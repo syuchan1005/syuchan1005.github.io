@@ -18,12 +18,12 @@
           <v-list>
             <v-list-item>
               <v-select v-model="colorType" :items="colors"
-                        label="color" :prepend-icon="$vuetify.icons.values.invert_colors" />
+                        label="color" :prepend-icon="$vuetify.icons.values.invert_colors"/>
             </v-list-item>
             <v-list-item>
               <v-select v-model="$i18n.locale" hide-details
                         :items="languages" item-text="name" item-value="locale"
-                        label="language" :prepend-icon="$vuetify.icons.values.language" />
+                        label="language" :prepend-icon="$vuetify.icons.values.language"/>
             </v-list-item>
           </v-list>
         </v-card>
@@ -108,7 +108,7 @@ export default {
     },
     languages() {
       return this.$i18n.availableLocales
-        .map(locale => ({
+        .map((locale) => ({
           locale,
           name: this.$t('name', locale),
         }));
@@ -129,7 +129,7 @@ export default {
     }
   },
   methods: {
-    locationReload: val => window.location.reload(val),
+    locationReload: (val) => window.location.reload(val),
   },
 };
 </script>
