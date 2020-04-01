@@ -7,8 +7,8 @@ export default {
     },
     home: {
       birthday: '1999/10/05 生まれ',
-      info: '2020卒 (予定)',
-      description: 'やりたいことをやっている高専生\n就活中 (内定もらったけどまだ募集中)',
+      info: '2020卒高専生(CS)',
+      description: '最近の趣味は個人用Webサービス作成。\n使いやすさを主軸にWebなどを用いて良いサービスを提供・作成する仕事がしたい',
     },
     detailsList: {
       links: {
@@ -50,8 +50,8 @@ export default {
     },
     home: {
       birthday: 'Birthday: 1999/10/05',
-      info: 'Graduation: 2020 (probably)',
-      description: 'student at a college of technology.\nI\'m job hunting now.',
+      info: 'Graduation: 2020, technical college(CS)',
+      description: 'My recent hobby is creating personal web services.\nI want to work to provide and create good services using the Web, etc. with ease of use as the main focus.',
     },
     detailsList: {
       links: {
