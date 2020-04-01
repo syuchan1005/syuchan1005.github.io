@@ -104,6 +104,7 @@ export default {
             openLink: 'mailto:syuchan.dev@gmail.com',
             openTarget: null,
           },
+          /*
           {
             avatarIcon: 'fas fa-pager',
             title: 'Form',
@@ -113,6 +114,7 @@ export default {
               'form',
             ],
           },
+          */
         ],
       },
       {
