@@ -30,21 +30,24 @@
       </v-menu>
     </v-app-bar>
 
-    <v-content class="app-content" :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
+    <v-main class="app-content" :class="{ smAndDown: $vuetify.breakpoint.smAndDown}">
       <keep-alive>
         <router-view/>
       </keep-alive>
-    </v-content>
+    </v-main>
 
     <v-bottom-navigation app grow class="app-footer" fixed v-model="bottomNav">
-      <v-btn v-for="item in navItems" :key="item.path" text style="height: inherit"
-             :color="item.color" :value="item.path" class="app-footer-button">
-        <span>{{ item.text }}</span>
-        <v-icon>{{ item.icon }}</v-icon>
-      </v-btn>
+      <template v-for="item in navItems">
+        <v-btn v-if="item.text" :key="item.path" text style="height: inherit"
+               :color="item.color" :value="item.path" class="app-footer-button">
+          <span>{{ item.text }}</span>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-btn>
+        <v-btn v-else v-show="false" :key="item.path" :value="item.path" />
+      </template>
     </v-bottom-navigation>
 
-    <v-snackbar v-model="showReloadAlert" bottom :timeout="0" color="error">
+    <v-snackbar v-model="showReloadAlert" bottom :timeout="-1" color="error">
       <div>{{ $t('app.reloadAlert') }}</div>
       <v-btn outlined @click="locationReload(true)">
         {{ $t('app.reload') }}
@@ -61,6 +64,7 @@ export default {
   data() {
     return {
       navItems: [
+        { path: '/' },
         {
           path: '/productions',
           text: 'Productions',
