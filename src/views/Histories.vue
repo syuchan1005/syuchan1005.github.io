@@ -46,8 +46,19 @@ export default {
     itemTypes: () => [
       ['intern', 'green'],
       ['casual_job', 'orange'],
+      ['new_grad', 'blue'],
     ],
     items: () => [
+      {
+        title: ['某社', 'A Company'],
+        type: 2,
+        body: [
+          ['period', '2020/04/01 ~'],
+          ['languages', 'Java, Kotlin'],
+          ['frameworks', 'Android'],
+          ['content', 'Androidアプリケーションの機能追加, 単体テスト, 結合テストの追加, プロジェクト進行'],
+        ],
+      },
       {
         title: ['LINE株式会社', 'LINE Corporation'],
         type: 1,

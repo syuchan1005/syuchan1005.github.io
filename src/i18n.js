@@ -33,6 +33,7 @@ export default {
       type: {
         intern: 'インターン',
         casual_job: '短期アルバイト',
+        new_grad: '新卒入社',
       },
       jobType: '形態',
       period: '期間',
@@ -76,6 +77,7 @@ export default {
       type: {
         intern: 'Intern',
         casual_job: 'Casual job',
+        new_grad: 'New grad',
       },
       jobType: 'Type',
       period: 'Period',
