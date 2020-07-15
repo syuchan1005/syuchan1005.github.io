@@ -101,5 +101,25 @@
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#FFF",
-  "theme_color": "#66bb6a"
+  "theme_color": "#66bb6a",
+  "shortcuts": [
+    {
+      "name": "Open home tab",
+      "short_name": "Home Tab",
+      "description": "View the profile and skills",
+      "url": "/?utm_source=shortcut#/home"
+    },
+    {
+      "name": "Open productions tab",
+      "short_name": "Productions Tab",
+      "description": "View the my products",
+      "url": "/?utm_source=shortcut#/productions"
+    },
+    {
+      "name": "Open histories tab",
+      "short_name": "Histories Tab",
+      "description": "View the my histories",
+      "url": "/?utm_source=shortcut#/productions"
+    }
+  ]
 }
