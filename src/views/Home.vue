@@ -130,13 +130,13 @@ export default {
           {
             avatarIcon: 'fas fa-search',
             title: 'Qiita',
-            subTitle: '@syu_chan_1005',
-            openLink: 'https://qiita.com/syu_chan_1005',
+            subTitle: '@syuchan1005',
+            openLink: 'https://qiita.com/syuchan1005',
           },
           {
             avatarIcon: 'fab fa-github',
             title: 'Github',
-            subTitle: 'syu_chan_1005',
+            subTitle: 'syuchan1005',
             openLink: 'https://github.com/syuchan1005',
           },
           {
