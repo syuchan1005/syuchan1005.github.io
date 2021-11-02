@@ -121,8 +121,8 @@ export default {
           },
           home: {
             birthday: '1999/10/05 生まれ',
-            info: '2020卒高専生(CS)',
-            description: '最近の趣味は個人用Webサービス作成。\n使いやすさを主軸にWebなどを用いて良いサービスを提供・作成する仕事がしたい'
+            info: '2020年高専卒(CS) 社会人2年目',
+            description: '自分が使って便利だと思えるソフトウェアの開発を続けていきたい。'
           },
           detailsList: {
             links: {
@@ -165,8 +165,8 @@ export default {
           },
           home: {
             birthday: 'Birthday: 1999/10/05',
-            info: 'Graduation: 2020, technical college(CS)',
-            description: 'My recent hobby is creating personal web services.\nI want to work to provide and create good services using the Web, etc. with ease of use as the main focus.'
+            info: 'Graduation: 2020, technical college(CS), Work for 2 years',
+            description: 'I want to continue to develop software that I can use and find useful.'
           },
           detailsList: {
             links: {

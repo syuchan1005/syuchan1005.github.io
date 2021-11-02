@@ -175,11 +175,6 @@ export default {
             title: 'i18n detailsList.links.amazon',
             subTitle: 'i18n detailsList.links.wishlist',
             openLink: 'http://amzn.asia/j7JpIsb'
-          },
-          {
-            title: 'Sourcerer',
-            subTitle: 'syuchan1005',
-            openLink: 'https://sourcerer.io/syuchan1005'
           }
         ]
       },
@@ -211,11 +206,6 @@ export default {
             title: 'English',
             sideTitle: '英語',
             rating: 3
-          },
-          {
-            title: 'Chinese',
-            sideTitle: '中国語',
-            rating: 1.5
           }
         ]
       },
@@ -227,12 +217,12 @@ export default {
             items: [
               {
                 title: 'Javascript',
-                rating: 4,
+                rating: 3,
                 avatarIcon: 'mdi-js'
               },
               {
                 title: 'TypeScript',
-                rating: 3.5
+                rating: 3
               },
               {
                 title: 'Java',
@@ -240,39 +230,9 @@ export default {
                 avatarIcon: 'mdi-java'
               },
               {
-                title: 'C/C++',
-                rating: 2.5
-              },
-              {
-                title: 'C#',
-                rating: 3
-              },
-              {
-                title: 'PHP',
-                rating: 3,
-                avatarIcon: 'mdi-php'
-              },
-              {
-                title: 'HTML5+CSS3',
-                sideTitle: '+ scss',
-                rating: 4
-              },
-              {
-                title: 'Go',
-                rating: 3.5
-              },
-              {
-                title: 'Swift',
-                rating: 3.5
-              },
-              {
-                title: 'Python3',
-                rating: 3.5,
-                avatarIcon: 'mdi-python'
-              },
-              {
                 title: 'Kotlin',
-                rating: 4
+                rating: 4,
+                avatarIcon: 'mdi-kotlin'
               }
             ]
           },
@@ -286,6 +246,10 @@ export default {
               {
                 title: 'SQLite',
                 rating: 4
+              },
+              {
+                title: 'Firestore',
+                rating: 3
               }
             ]
           },
@@ -298,7 +262,7 @@ export default {
               },
               {
                 title: 'Android',
-                rating: 3
+                rating: 3.5
               },
               {
                 title: 'Spring',
@@ -306,26 +270,6 @@ export default {
               },
               {
                 title: 'Laravel',
-                rating: 3
-              },
-              {
-                title: 'Flask',
-                rating: 3
-              },
-              {
-                title: 'Gin',
-                rating: 3
-              },
-              {
-                title: 'Echo',
-                rating: 3
-              },
-              {
-                title: '.Net Framework',
-                rating: 3
-              },
-              {
-                title: 'jQuery',
                 rating: 3
               },
               {
@@ -341,73 +285,8 @@ export default {
                 rating: 3
               },
               {
-                title: 'Bootstrap',
-                rating: 3
-              },
-              {
                 title: 'Unity',
                 rating: 3
-              },
-              {
-                title: 'Unreal Engine',
-                rating: 2.5
-              }
-            ]
-          },
-          {
-            title: 'Other',
-            items: [
-              {
-                title: 'Ubuntu',
-                rating: 3
-              },
-              {
-                title: 'Debian',
-                rating: 3
-              },
-              {
-                title: 'macOS',
-                rating: 3
-              },
-              {
-                title: 'Windows',
-                rating: 3
-              },
-              {
-                title: 'Apache',
-                rating: 3
-              },
-              {
-                title: 'nginx',
-                rating: 3
-              },
-              {
-                title: 'Tomcat',
-                rating: 3
-              },
-              {
-                title: 'Redis',
-                rating: 3
-              },
-              {
-                title: 'memcached',
-                rating: 3
-              },
-              {
-                title: 'WordPress',
-                rating: 2
-              },
-              {
-                title: 'Vim',
-                rating: 3
-              },
-              {
-                title: 'Emacs',
-                rating: 3
-              },
-              {
-                title: 'IntelliJ IDEA',
-                rating: 4
               }
             ]
           }
