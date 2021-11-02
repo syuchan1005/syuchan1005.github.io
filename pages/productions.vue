@@ -81,6 +81,7 @@
 </template>
 
 <script>
+// noinspection JSFileReferences
 import BackgroundPainter from '~/assets/BackgroundPainter.worklet.workaround.js'
 
 if (process.browser && CSS && CSS.paintWorklet && CSS.paintWorklet.addModule) {
@@ -97,17 +98,17 @@ export default {
   },
   computed: {
     items: () => ({
-      2019: [
+      2021: [
         {
           color: 'green',
           title: 'BookReader',
           link: 'https://github.com/syuchan1005/BookReader',
-          body: '自分専用マンガビュワー',
+          body: '2019年から改善を続けている自分専用マンガビュワー',
           more: [
             [
               'フロントエンド',
               'React (hooks)',
-              'Material-UI'
+              'MUI'
             ],
             [
               'バックエンド',
@@ -120,6 +121,22 @@ export default {
             ]
           ]
         },
+        {
+          color: 'green lighten-1',
+          link: 'https://github.com/syuchan1005/syuchan1005.github.io',
+          title: 'syuchan1005 Portfolio (Renewed)',
+          body: 'このサイト\nほとんどのUIをjsonから構築しているため一部重たいことがあった。Nuxtを用いてSSGを利用し軽量化を実施。',
+          more: [
+            [
+              'フロントエンド',
+              'Vue.js',
+              'Vuetify',
+              'Nuxt'
+            ]
+          ]
+        }
+      ],
+      2019: [
         {
           color: 'grey darken-1',
           title: 'HomeControl',
