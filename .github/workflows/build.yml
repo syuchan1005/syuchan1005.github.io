@@ -12,7 +12,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Add git worktree
-        run: git worktree add docs master
+        run: |
+          git worktree add dist master
+          mv dist/.git dist.git
       - uses: actions/setup-node@v1
       - name: Install
         run: npm ci
@@ -20,9 +22,10 @@ jobs:
         run: npm run generate
       - name: Deploy
         run: |
+          mv dist.git dist/.git
           cd dist
           git config --global user.email "${{ secrets.GIT_EMAIL }}"
           git config --global user.name "${{ secrets.GIT_USERNAME }}"
           git add -A
           git commit -m "${{ github.event_name }} ${{ github.sha }}"
-          git push https://${{ secrets.ACCESS_TOKEN }}@github.com/${{ github.repository }}.git master
+          git push origin master
