@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{522:function(n,e,t){"use strict";t.r(e);var c={fetch:function(n){n.redirect(301,"/home")}},d=t(109),component=Object(d.a)(c,undefined,undefined,!1,null,null,null);e.default=component.exports}}]);
