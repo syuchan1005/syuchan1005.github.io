@@ -2,7 +2,7 @@
   <div class="history">
     <v-timeline dense>
       <v-timeline-item v-for="(item, i) in items" :key="i" :color="itemTypes[item.type][1]">
-        <v-card class="elevation-2">
+        <v-card v-if="item.type !== 3" class="elevation-2">
           <v-card-title>
             <div class="headline">
               {{ item.title[$i18n.locale === 'ja' ? 0 : 1] }}
@@ -38,6 +38,26 @@
             </v-btn>
           </v-card-actions>
         </v-card>
+        <v-card v-else>
+          <v-card-title>
+            <div class="headline">
+              {{ item.title[$i18n.locale === 'ja' ? 0 : 1] }}
+            </div>
+            <div class="subheading" style="margin-left: 16px">
+              {{ item.title[$i18n.locale === 'ja' ? 1 : 0] }}
+            </div>
+          </v-card-title>
+          <a
+            class="h2"
+            style="padding: 0 0 8px 32px;display: block"
+            :href="item.articleUrl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {{ item.articleTitle }}
+            <span>({{ item.articleBy }})</span>
+          </a>
+        </v-card>
       </v-timeline-item>
     </v-timeline>
   </div>
@@ -50,17 +70,25 @@ export default {
     itemTypes: () => [
       ['intern', 'green'],
       ['casual_job', 'orange'],
-      ['new_grad', 'blue']
+      ['new_grad', 'blue'],
+      ['article', 'purple']
     ],
     items: () => [
       {
-        title: ['某社', 'A Company'],
+        title: ['LINE株式会社', 'LINE Corporation'],
+        type: 3,
+        articleTitle: '新卒エンジニアの仕事〜2020年入社のAndroidエンジニア編〜',
+        articleUrl: 'https://engineering.linecorp.com/ja/blog/new-graduate-20-app-dev3/',
+        articleBy: 'LINE Engineering blog'
+      },
+      {
+        title: ['LINE株式会社', 'LINE Corporation'],
         type: 2,
         body: [
           ['period', '2020/04/01 ~'],
           ['languages', 'Java, Kotlin'],
           ['frameworks', 'Android'],
-          ['content', 'Androidアプリケーションの機能追加, 単体テスト, 結合テストの追加, プロジェクト進行']
+          ['content', 'Androidアプリケーションの機能追加, プロジェクト進行']
         ]
       },
       {
